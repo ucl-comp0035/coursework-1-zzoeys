@@ -2,8 +2,7 @@
 
 ## Technical information
 ### Repository URL
-Please add the URL to your repository below, then delete this instruction text.
-[Repository]()
+[Repository](https://github.com/ucl-comp0035/coursework-1-zzoeys.git)
 
 ### Set-up instructions
 
@@ -45,21 +44,20 @@ Please add names of your data set files in this repository below, then delete th
 [Data Exploration]()
 
 ## Weekly progress reports
-Copy and paste from Moodle or use the following structure. Delete this instruction text.
+### Report 1
 
 What I did in the last week:
-- item
-- item
+* Learned about different software engineering and data science process methodologies and what considerations should be made when selecting the appropriate model for a project.
+* Wrote down points about the coursework question on the target audience, experience of the team in these methodologies, business goals and problems.
+* Read up in-depth on Agile, Scrum, Data Driven Scrum and Team Data Science Process.
 
 What I plan to do in the next week:
-- item
-- item
+* Finalise a methodology to use.
+* Draft a persona and problem statement.
+* Brainstorm questions that can be explored with the data set.
 
 Issues blocking my progress (state ‘None’ if there are no issues):
-- item
-- item
-
-### Report 1
+* I am unsure whether we should choose a more data science focused methodology or a software engineering one.
 
 ### Report 2
 
