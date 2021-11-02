@@ -27,8 +27,6 @@ If the marker cannot execute your coursework they can't grade it!
 
 ### Questions to be answered using the dataset
 
-### Suggested web app
-
 ## Data preparation and exploration
 ### Data preparation
 
