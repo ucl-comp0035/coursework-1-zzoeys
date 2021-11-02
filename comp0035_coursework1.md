@@ -84,6 +84,7 @@ What I did in the last week:
 What I plan to do in the next week:
 * Commit work done to the repository.
 * Continue exploring the dataset to see what questions can be answered from it.
+* Come up with more questions that can be answered with the dataset or sub questions for the question 'Which boroughs in London have the best survival rates for new enterprises?'
 
 Issues blocking my progress (state ‘None’ if there are no issues):
 * None.
