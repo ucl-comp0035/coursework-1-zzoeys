@@ -61,7 +61,34 @@ Issues blocking my progress (state ‘None’ if there are no issues):
 
 ### Report 2
 
+What I did in the last week:
+* Finalised the use of Data Driven Scrum and Team Data Science Process as the coursework methodology.
+* Learned the key purposes of a problem statement and drafted a problem statement for the coursework question.
+* Started to draft the persona to describe the users for the web application.
+* Came up with a question that can be explored with the dataset (Which boroughs in London have the best survival rates for new enterprises?)
+
+What I plan to do in the next week:
+* Finish drafting the persona.
+* Write the justification of the methodologies chosen.
+* Edit the problem statement based on feedback from PGTAs and peers.
+* Prepare data using pandas and explore different data visualisations.
+
+Issues blocking my progress (state ‘None’ if there are no issues):
+* Unsure whether we should describe a specific client in the problem statement and persona or make it more general. For example, as my dataset has to do with businesses and the target user of my web application will be aspiring business owners trying to find a location for their business, I'm unsure whether I should make the persona as 'aspiring business owners' or come up with just one person to embody this group.
+
 ### Report 3
+
+What I did in the last week:
+* Learned how to prepare and explore data using pandas.
+* Explored the dataset (8 Business).
+* Worked on drafting the persona, editing problem statement based on feedback from peers and writing a justification of the methods chosen.
+
+What I plan to do in the next week:
+* Commit work done to the repository.
+* Continue exploring the dataset to see what questions can be answered from it.
+
+Issues blocking my progress (state ‘None’ if there are no issues):
+* None.
 
 ### Report 4
 
