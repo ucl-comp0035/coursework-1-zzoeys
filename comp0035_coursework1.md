@@ -17,11 +17,16 @@ If the marker cannot execute your coursework they can't grade it!
 ## Selection of project methodology
 ### Methodology (or combination) selected
 
-### Selection criteria and justification of selection
+Data Driven Scrum and Team Data Science Process
 
+### Selection criteria and justification of selection
 
 ## Definition of the business need
 ### Problem definition
+
+Aspiring business owners looking to find a location to start their business struggle to find the most appropriate area that would give their business the best chance for survival. With 60% of businesses failing within the first three years (May, 2019), it is important for aspiring business owners to do what they can to ensure their business has the best chance of long-term survival. Past research has shown that the location of a business plays a crucial factor in determining its survival chances (Fritsch et al., 2006). This is because important factors of business survival, such as access to labour markets, specialised services and customers, are related to the location of the startup. For example, choosing an area with lower economic activity might hinder the startup’s access to important resources, making it harder for the startup to sustain itself after launch and decreasing its chances of survival. Thus, founders are faced with the important decision of choosing the most suitable location to launch their business and require the relevant data to enable them to make an informed decision. 
+
+As clients often have little experience working with data, the relevant data has to be processed and easily visualised in a way that is accessible to the client. The available dataset to be used consists of the number of new enterprises started each year in each borough in London from 2002 to 2018 and the percentage of these new enterprises that were still alive one, two, three, four and five years later. This data will be cleaned and explored to produce a web application with visualisations based on data about the survival rates of different boroughs in London. This would allow the client to better make a decision about where they should launch their startup.
 
 ### Target audience
 
@@ -92,5 +97,7 @@ Issues blocking my progress (state ‘None’ if there are no issues):
 ### Report 4
 
 ## References
-Use any [referencing style](https://library-guides.ucl.ac.uk/referencing-plagiarism/referencing-styles) that you are
-used to using in your course.
+Fritsch, M., Brixy, U., & Falck, O. (2006). The effect of industry, region, and time on New Business Survival – a multi-dimensional analysis. Review of Industrial Organization. Retrieved October 29, 2021, from https://link.springer.com/article/10.1007/s11151-006-0018-4. 
+
+
+May, R. (2019, January 24). Start-ups across the UK are going bust - they need more careful management for our economy to boom. The Telegraph. Retrieved October 24, 2021, from https://www.telegraph.co.uk/politics/2019/01/24/start-ups-across-uk-going-bust-need-careful-management-economy/.  
