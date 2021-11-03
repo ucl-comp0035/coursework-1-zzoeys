@@ -99,5 +99,4 @@ Issues blocking my progress (state ‘None’ if there are no issues):
 ## References
 Fritsch, M., Brixy, U., & Falck, O. (2006). The effect of industry, region, and time on New Business Survival – a multi-dimensional analysis. Review of Industrial Organization. Retrieved October 29, 2021, from https://link.springer.com/article/10.1007/s11151-006-0018-4. 
 
-
 May, R. (2019, January 24). Start-ups across the UK are going bust - they need more careful management for our economy to boom. The Telegraph. Retrieved October 24, 2021, from https://www.telegraph.co.uk/politics/2019/01/24/start-ups-across-uk-going-bust-need-careful-management-economy/.  
