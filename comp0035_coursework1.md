@@ -6,13 +6,7 @@
 
 ### Set-up instructions
 
-Assume that requirements will be installed from requirements.txt.
-
-If you have used any libraries that require set-up beyond `pip install ...` then use this section to explain any set-up
-instructions to be followed to run your coursework.
-
-If the marker cannot execute your coursework they can't grade it!
-
+No additional requirements beyond requirements.txt.
 
 ## Selection of project methodology
 ### Methodology (or combination) selected
@@ -24,13 +18,19 @@ Data Driven Scrum and Team Data Science Process
 ## Definition of the business need
 ### Problem definition
 
-Aspiring business owners looking to find a location to start their business struggle to find the most appropriate area that would give their business the best chance for survival. With 60% of businesses failing within the first three years (May, 2019), it is important for aspiring business owners to do what they can to ensure their business has the best chance of long-term survival. Past research has shown that the location of a business plays a crucial factor in determining its survival chances (Fritsch et al., 2006). This is because important factors of business survival, such as access to labour markets, specialised services and customers, are related to the location of the startup. For example, choosing an area with lower economic activity might hinder the startup’s access to important resources, making it harder for the startup to sustain itself after launch and decreasing its chances of survival. Thus, founders are faced with the important decision of choosing the most suitable location to launch their business and require the relevant data to enable them to make an informed decision. 
+Aspiring business owners looking to find a location to start their business struggle to find the most appropriate area that would give their business the best chance for survival. With 60% of businesses failing within the first three years (May, 2019), it is important for aspiring business owners to do what they can to ensure their business has the best chance of long-term survival. Past research has shown that the location of a business plays a crucial factor in determining its survival chances (Fritsch et al., 2006). This is because important factors of business survival, such as access to labour markets, specialised services and customers, are related to the location of the startup. For example, choosing an area with lower economic activity might hinder the startup’s access to these important resources, making it harder for the startup to sustain itself after launch and decreasing its chances of survival. Thus, founders are faced with the important decision of choosing the most suitable location to launch their business and require the relevant data to enable them to make an informed decision. 
 
-As clients often have little experience working with data, the relevant data has to be processed and easily visualised in a way that is accessible to the client. The available dataset to be used consists of the number of new enterprises started each year in each borough in London from 2002 to 2018 and the percentage of these new enterprises that were still alive one, two, three, four and five years later. This data will be cleaned and explored to produce a web application with visualisations based on data about the survival rates of different boroughs in London. This would allow the client to better make a decision about where they should launch their startup.
+Having to consider all these different factors may be difficult and time-consuming, especially when aspiring business owners don't have a background in entrepreneurship. Thus, it would be much faster and more convenient to analyse past data on survival rates of businesses in different areas as this would shed light on whether the area is conducive for the survivability of startups. 
+
+As clients often have little experience working with data, the relevant data has to be processed and easily visualised in a way that is accessible to the client. The available dataset to be used consists of the number of new enterprises started each year in each borough in London from 2002 to 2018 and the percentage of these new enterprises that were still alive one, two, three, four and five years later. As this data only goes up to 2018, predictive modelling will be performed to estimate the survival rates for 2021.
+
+This data will be cleaned and explored to produce a web application with visualisations based on data about the survival rates of different boroughs in London. This would allow the client to better make a decision about where they should launch their startup.
 
 ### Target audience
 
 ### Questions to be answered using the dataset
+
+
 
 ## Data preparation and exploration
 ### Data preparation
@@ -38,6 +38,8 @@ As clients often have little experience working with data, the relevant data has
 [Data Preparation](data_preparation.py)
 
 ### Prepared data set
+The given link contains three dataset files. However, only the first was chosen to be used as the data from the other two are included in the first dataset.
+
 Please add names of your data set files in this repository below, then delete this instruction text.
 [Original data set]()
 [Prepared data set]()
