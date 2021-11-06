@@ -11,22 +11,34 @@ No additional requirements beyond requirements.txt.
 ## Selection of project methodology
 ### Methodology (or combination) selected
 
-Data Driven Scrum and Team Data Science Process
+Team Data Science Process and Data Driven Scrum
 
 ### Selection criteria and justification of selection
+
+Team Data Science Process (TDSP) is a modern and agile lifecycle for data science project teams where the deliverable is a data science product (Data Science Process Alliance, 2021a). It provides an interative framework starting from business understanding, where objectives and data sources are defined, to customer acceptance, where the customer validates their satisfaction with the product. As this project involves creating a web application with data visualisations, there is a software engineering and data science aspect of the project. TPDS addresses both these aspects and effectively combines the roles, considerations and skills involved in a typical software engineering and data science processes. In addition, TPDS clearly defines team roles and utilises a standardised project structure with a version control system. This would be beneficial for an inexperienced project team as team members have fixed responsibilities and a version control system would facilitate collaboration. Thus, TDSP is an appropriate methodology to choose for this project.
+
+Another benefit of using TDSP is that the methodology is well documented (Microsoft, 2021a), which would greatly help the inexperienced team to learn the process. As the product team is formed of developers with little to no experience in the use of software engineering or data science process models, it is assumed that they would be heavily relying on the official documentation. However, the TPDS documentation explains sprint planning and adding items to product backlogs using Microsoft Azure Boards (Microsoft, 2021b), which the product team might not choose to use. Sprint planning forms a key part of the day-to-day tasks of the product team, so it is important to have easily understandable process.
+
+To address this shortcoming of TDSP, Data Driven Scrum (DDS) will be used to guide the use of sprint planning. DDS incorporates the advantages of Scrum, such as the use of daily stand-up and retrospectives, which ensure smooth collaboration within teams (Data Science Process Alliance, 2021b). However, DDS is more flexible than traditional Scrum as DDS sprints don't have a fixed length while tradition Scrum and TDSP utilise fixed sprint durations. This would be beneficial to this specific project team as the project involves software engineering and data science. Depending on what aspect the project is being worked on, sprint duration and can be extended or shortened to better suit the team. 
+
+DDS also integrates the visual and continuous aspect of Kanban which guides the collaborative process of product or data science teams (Data Science Process Alliance, 2021b). From my own experience working in a software development team, Kanban boards are easy and simple to learn so an inexperienced team, like that of this project, can pick up on it quickly. 
+
+Therefore, TDPS was chosen to provide a high-level methodology to aid business understanding through customer acceptance, while DDS will be used instead of the sprint planning process in the TDPS documentation. 
+
 
 ## Definition of the business need
 ### Problem definition
 
-Aspiring business owners looking to find a location to start their business struggle to find the most appropriate area that would give their business the best chance for survival. With 60% of businesses failing within the first three years (May, 2019), it is important for aspiring business owners to do what they can to ensure their business has the best chance of long-term survival. Past research has shown that the location of a business plays a crucial factor in determining its survival chances (Fritsch et al., 2006). This is because important factors of business survival, such as access to labour markets, specialised services and customers, are related to the location of the startup. For example, choosing an area with lower economic activity might hinder the startup’s access to these important resources, making it harder for the startup to sustain itself after launch and decreasing its chances of survival. Thus, founders are faced with the important decision of choosing the most suitable location to launch their business and require the relevant data to enable them to make an informed decision. 
+Aspiring business owners looking to find a location in London to start their business struggle to find the most appropriate area that would give their business the best chance for survival. With 60% of businesses failing within the first three years (May, 2019), it is important for aspiring business owners to do what they can to ensure their business has the best chance of long-term survival. Past research has shown that the location of a business plays a crucial factor in determining its survival chances (Fritsch et al., 2006). This is because important factors of business survival, such as access to labour markets, specialised services and customers, are related to the location of the startup. For example, choosing an area with lower economic activity might hinder the startup’s access to these important resources, making it harder for the startup to sustain itself after launch and decreasing its chances of survival. Thus, founders are faced with the important decision of choosing the most suitable location to launch their business and require the relevant data to enable them to make an informed decision. 
 
-Having to consider all these different factors may be difficult and time-consuming, especially when aspiring business owners don't have a background in entrepreneurship. Thus, it would be much faster and more convenient to analyse past data on survival rates of businesses in different areas as this would shed light on whether the area is conducive for the survivability of startups. 
+Having to consider all these different factors may be difficult and time-consuming, especially when aspiring business owners don't have a background in entrepreneurship. In particular, London is one of the most popular places in the world for startups (Gauthier, 2021). However, different areas in london differ in the support they can offer startups. TThus, it would be much faster and more convenient to analyse past data on survival rates of businesses in different areas as this would shed light on whether the area is conducive for the survivability of startups. 
 
-As clients often have little experience working with data, the relevant data has to be processed and easily visualised in a way that is accessible to the client. The available dataset to be used consists of the number of new enterprises started each year in each borough in London from 2002 to 2018 and the percentage of these new enterprises that were still alive one, two, three, four and five years later. As this data only goes up to 2018, predictive modelling will be performed to estimate the survival rates for 2021.
+As clients often have little experience working with data, the relevant data has to be processed and easily visualised in a way that is accessible to the client. The available dataset to be used consists of the number of new enterprises started each year in each borough in London from 2002 to 2018 and the percentage of these new enterprises that were still alive one, two, three, four and five years later. 
 
 This data will be cleaned and explored to produce a web application with visualisations based on data about the survival rates of different boroughs in London. This would allow the client to better make a decision about where they should launch their startup.
 
 ### Target audience
+
 
 ### Questions to be answered using the dataset
 
@@ -99,6 +111,18 @@ Issues blocking my progress (state ‘None’ if there are no issues):
 ### Report 4
 
 ## References
-Fritsch, M., Brixy, U., & Falck, O. (2006). The effect of industry, region, and time on New Business Survival – a multi-dimensional analysis. Review of Industrial Organization. Retrieved October 29, 2021, from https://link.springer.com/article/10.1007/s11151-006-0018-4. 
+Anon, 2021. London maintains its Crown as one of the world's top startup hubs. London and Partners News. Available at: https://media.londonandpartners.com/news/london-maintains-its-crown-as-one-of-the-worlds-top-startup-hubs [Accessed October 24, 2021]. 
 
-May, R. (2019, January 24). Start-ups across the UK are going bust - they need more careful management for our economy to boom. The Telegraph. Retrieved October 24, 2021, from https://www.telegraph.co.uk/politics/2019/01/24/start-ups-across-uk-going-bust-need-careful-management-economy/.  
+Data Science Process Alliance, 2021b. Data Driven Scrum. Data Science Process Alliance. Available at: https://www.datascience-pm.com/data-driven-scrum/ [Accessed October 22, 2021]. 
+
+Data Science Process Alliance, 2021a. Team Data Science Process (TDSP). Data Science Process Alliance. Available at: https://www.datascience-pm.com/tdsp/ [Accessed October 22, 2021]. 
+
+Dunsby, M., 2021. Where is the London location to start a business?: Startups. Startups. Available at: https://startups.co.uk/analysis/where-is-the-best-place-in-london-to-start-a-business/ [Accessed October 24, 2021]. 
+
+Fritsch, M., Brixy, U. &amp; Falck, O., 2006. The effect of industry, region, and time on New Business Survival – a multi-dimensional analysis. Review of Industrial Organization. Available at: https://link.springer.com/article/10.1007/s11151-006-0018-4 [Accessed October 24, 2021]. 
+
+May, R., 2019. Start-ups across the UK are going bust - they need more careful management for our economy to boom. The Telegraph. Available at: https://www.telegraph.co.uk/politics/2019/01/24/start-ups-across-uk-going-bust-need-careful-management-economy/ [Accessed October 24, 2021]. 
+
+Microsoft, 2021b. Assign backlog items to a sprint. Available at: https://docs.microsoft.com/en-us/azure/devops/boards/sprints/assign-work-sprint?view=azure-devops [Accessed October 24, 2021]. 
+
+Microsoft, 2021a. What is the team data science process? Azure Architecture Center. Available at: https://docs.microsoft.com/en-us/azure/architecture/data-science-process/overview [Accessed October 22, 2021]. 
