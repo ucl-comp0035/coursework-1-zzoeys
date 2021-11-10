@@ -90,7 +90,7 @@ The given link contains three dataset files. However, only the first was chosen 
 ![Death Rates Through the Years](charts/boxplot_deathrates.png)
 ![5-Year Survival Rates Through the Years](charts/boxplot_5-year_survival_rate.png)
 ![Survival Rates for Outliers](charts/survival_rates_outliers.png)
-![Average 5-Year Survival Rates](bargraph_ave_5-year_survival_rate.png)
+![Average 5-Year Survival Rates](charts/bargraph_ave_5-year_survival_rate.png)
 ![Number of Active Enterprises in 2019](charts/bargraph_active_enterprises_2019.png)
 ![Average Death Rates](charts/bargraph_ave_deathrates.png)
 
