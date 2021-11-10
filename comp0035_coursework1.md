@@ -17,30 +17,30 @@ Team Data Science Process and Data Driven Scrum
 
 Selection criteria:
 * Covers both software development and data science methods
-* Easy to learn or well documented
+* Easy to learn or is well documented
 * Flexible 
 
-Team Data Science Process (TDSP) is a modern and agile lifecycle for data science project teams where the deliverable is a data science product (Data Science Process Alliance, 2021a). It provides an interative framework starting from business understanding, where objectives and data sources are defined, to customer acceptance, where the customer validates their satisfaction with the product. As this project involves creating a web application with data visualisations, there is a software engineering and data science aspect of the project. TPDS addresses both these aspects and effectively combines the roles, considerations and skills involved in a typical software engineering and data science processes. In addition, TPDS clearly defines team roles and utilises a standardised project structure with a version control system. This would be beneficial for an inexperienced project team as team members have fixed responsibilities and a version control system which would facilitate collaboration. Thus, TDSP is an appropriate methodology to choose for this project.
+Team Data Science Process (TDSP) is a modern and agile lifecycle for data science project teams where the deliverable is a data science product (Data Science Process Alliance, 2021a). It provides an interative framework starting from business understanding, where objectives and data sources are defined, to customer acceptance, where the customer validates their satisfaction with the product. As this project involves creating a web application with data visualisations, there is a software engineering and data science aspect of the project. TDSP addresses both these aspects and effectively combines the considerations and skills involved in typical software engineering and data science processes. In addition, TDSP clearly defines team roles and utilises a standardised project structure with a version control system. This would be beneficial for an inexperienced project team as team members would have fixed responsibilities and a version control system which would facilitate collaboration. Thus, TDSP is an appropriate methodology to choose for this project.
 
-Another benefit of using TDSP is that the methodology is well documented (Microsoft, 2021a), which would greatly help the inexperienced team to learn the process. As the product team is formed of developers with little to no experience in the use of software engineering or data science process models, it is assumed that they would be heavily relying on the official documentation. However, the TPDS documentation explains sprint planning and adding items to product backlogs using Microsoft Azure Boards (Microsoft, 2021b), which the product team might not choose to use. Sprint planning forms a key part of the day-to-day tasks of the product team, so it is important to have easily understandable process.
+Another benefit of using TDSP is that the methodology is well documented (Microsoft, 2021a), which would greatly help the inexperienced team to learn the process. As the project team is formed of developers with little to no experience in the use of software engineering or data science process models, it is assumed that they would be heavily relying on the official documentation. However, the TDSP documentation explains sprint planning and adding items to product backlogs using Microsoft Azure Boards (Microsoft, 2021b), which the team might not choose to use. Sprint planning forms a key part of day-to-day tasks, so it is important to have easily understandable process.
 
-To address this shortcoming of TDSP, Data Driven Scrum (DDS) will be used to guide the use of sprint planning. DDS incorporates the advantages of Scrum, such as the use of daily stand-up and retrospectives, which ensure smooth collaboration within teams (Data Science Process Alliance, 2021b). However, DDS is more flexible than traditional Scrum as DDS sprints don't have a fixed length while tradition Scrum and TDSP utilise fixed sprint durations. This would be beneficial to this specific project team as the project involves software engineering and data science. Depending on what aspect the project is being worked on, sprint duration and can be extended or shortened to better suit the team. 
+To address this shortcoming of TDSP, Data Driven Scrum (DDS) will be used to guide the use of sprint planning. DDS incorporates the advantages of Scrum, such as the use of daily stand-ups and retrospectives, which ensure smooth collaboration within teams (Data Science Process Alliance, 2021b). However, DDS is more flexible than traditional Scrum. DDS sprints don't have a fixed length, while traditional Scrum and TDSP utilise fixed sprint durations. This would be beneficial to this specific project team as the project involves software engineering and data science. Depending on what aspect of the project is being worked on, sprint duration and can be extended or shortened to better suit the team's needs. 
 
-DDS also integrates the visual and continuous aspect of Kanban which guides the collaborative process of product or data science teams (Data Science Process Alliance, 2021b). From my own experience working in a software development team, Kanban boards are easy and simple to learn so an inexperienced team, like that of this project, can pick up on it quickly. 
+DDS also integrates the visual and continuous aspect of Kanban which guides the collaborative process of product or data science teams (Data Science Process Alliance, 2021b). From my own experience working in a software development team, Kanban boards are easy and simple to learn, so an inexperienced team, like that of this project, can pick up on them quickly. As there are different types of Kanban boards that can be found online, the project team is not restricted to using just Microsoft Azure products. I also found the use of daily stand-ups and retrospectives highly useful in ensuring everyone on the team is working together smoothly. 
 
-Therefore, TDPS was chosen to provide a high-level methodology to aid business understanding through customer acceptance, while DDS will be used instead of the sprint planning process in the TDPS documentation. Though it may be confusing to use methodologies, the flexibility of DDS makes up for this as there is room to try the methodologies and adapt to what suits the team best. 
+Therefore, TDPS was chosen to provide a high-level methodology to aid business understanding through customer acceptance, while DDS will be used instead of the sprint planning process in the TDPS documentation. Though it may be confusing to use two methodologies, the flexibility of DDS makes up for this as there is room to try the methodologies and adapt to what suits the team best. 
 
 
 ## Definition of the business need
 ### Problem definition
 
-Aspiring business owners looking to find a location in London to start their business struggle to find the most appropriate area that would give their business the best chance for survival. With 60% of businesses failing within the first three years (May, 2019), it is important for aspiring business owners to do what they can to ensure their business has the best chance of long-term survival. Past research has shown that the location of a business plays a crucial factor in determining its survival chances (Fritsch et al., 2006). This is because important factors of business survival, such as access to labour markets, specialised services and customers, are related to the location of the startup. For example, choosing an area with lower economic activity might hinder the startup’s access to these important resources, making it harder for the startup to sustain itself after launch and decreasing its chances of survival. Thus, founders are faced with the important decision of choosing the most suitable location to launch their business and require the relevant data to enable them to make an informed decision. 
+Aspiring business owners looking to find a location in London to start their business struggle to find the most appropriate area that would give their business the best chance for survival. With 60% of businesses failing within the first three years (May, 2019), it is important for aspiring business owners to do what they can to ensure their business has the best chance of long-term survival. Past research has shown that the location of a business plays a crucial factor in determining its survival chances (Fritsch et al., 2006). This is because important factors of business survival, such as access to labour markets, specialised services and customers, are related to the location of the startup. For example, choosing an area with lower economic activity might hinder the startup’s access to these important resources, making it harder for the startup to sustain itself after launch and decreasing its chances of survival. Thus, founders are faced with the important decision of choosing the most suitable location to launch their business.
 
-Having to consider all these different factors may be difficult and time-consuming, especially when aspiring business owners don't have a background in entrepreneurship. In particular, London is one of the most popular places in the world for startups (Gauthier, 2021). However, different areas in london differ in the support they can offer startups. Thus, it would be much faster and more convenient to analyse past data on survival rates of businesses in different areas as this would shed light on whether the area is conducive for the survivability of startups. 
+Having to consider all these different factors may be difficult and time-consuming, especially when aspiring business owners don't have a background in entrepreneurship. In particular, London is one of the most popular places in the world for startups (Gauthier, 2021). However, different areas in london differ in the support they can offer startups (Dunsby et al., 2021). Thus, it would be much faster and more convenient to analyse past data on business demographics in different areas as this would shed light on whether the area is conducive for the survivability of startups. 
 
-As clients often have little experience working with data, the relevant data has to be processed and easily visualised in a way that is accessible to the client. The available dataset to be used consists of the number of new enterprises started each year in each borough in London from 2002 to 2018 and the percentage of these new enterprises that were still alive one, two, three, four and five years later. 
+As clients often have little experience working with data, the relevant data has to be processed and easily visualised in a way that is accessible to the client. The available dataset to be used consists of the number of new enterprises started each year in each borough in London from 2002 to 2018 and the percentage of these new enterprises that were still alive one, two, three, four and five years later. Other information contained in this dataset include the number of active enterprises and enterprise deaths in each borough from 2002 to 2019. 
 
-This data will be cleaned and explored to produce a web application with visualisations based on data about the survival rates of different boroughs in London. This would allow the client to better make a decision about where they should launch their startup.
+This data will be cleaned and explored to produce a web application with visualisations based on data about the survival rates, number of active enterprises and enterprise death rates of different boroughs in London. This would enable the client to better understand the economic situation of different boroughs, and ultimately make a decision about where they should launch their startup.
 
 ### Target audience
 
@@ -48,40 +48,45 @@ This data will be cleaned and explored to produce a web application with visuali
 
 ### Questions to be answered using the dataset
 
-Ultimately, the question to be answered is 'Which borough in London is the best place to start a business?' To answer this question using the available dataset, the following questions will be answered:
+Ultimately, the question to be answered is: 'Which borough in London is the best place to start a business?' To answer this question using the available dataset, the following questions will be answered:
 
-- Based on data on past years, which borough has the highest 5-year survival rate?
-- Are there any general trends with regard to 5-year survival rates?
-- Which boroughs have the highest economic activity, indicated by the number of active enterprises?
-- Which boroughs have the lowest death rates?
+1) Are there any general trends with regard to 5-year survival rates?
+2) Which borough has the highest 5-year survival rate?
+3) Which boroughs have the highest economic activity, indicated by the number of active enterprises?
+4) Which boroughs have the lowest death rates?
 
-5-year survival rates were chosen to be looked at as a business is always striving to survive long-term and this was the longest survival rate period that the dataset provided. It is also important to look at the general trends as we are using past data that may reflect vastly different economic situations that cause survival rates across all boroughs to vary from those from recent years. The number of active enterprises and death rates should be looked at as they shed light on the economic activity of the area. This data is also more recent as it goes up to the year 2019, while we can only get 5-year survival rates up to the year 2014, so they may provide a more recent perspective on current economic situations.
+5-year survival rates were chosen to be looked at as a business is always striving to survive long-term and this was the longest survival rate period that the dataset provided. It is also important to look at the general trends as we are using past data that may reflect vastly different economic situations that cause survival rates across all boroughs to vary from those of recent years. The number of active enterprises and death rates should be looked at as well because they shed light on the economic activity of the area. This data is also more recent as it goes up to the year 2019, while we can only get 5-year survival rates up to the year 2014, so they may provide a more recent perspective on current economic situations.
 
 ## Data preparation and exploration
 ### Data preparation
 
-[Data Preparation](data_preparation.py)
+[Data Preparation](data_preparation.py)  
 
-<br>
 
 [Data Preparation Notebook](data_preparation_notebook.ipynb)
 
 The Python file has only the necessary code to produce the prepared dataset. The Jupyter notebook has all the steps taken in the process of understanding and preparing the dataset, along with explanations on why these steps were taken.
 
 ### Prepared data set
-The given link contains three dataset files. However, only the first was chosen to be used as the data from the other two are included in the first dataset.
+The given [link](https://data.london.gov.uk/dataset/business-demographics-and-survival-rates-borough) contains three dataset files. However, only the first was chosen to be used as the data from the other two are included in the first dataset.
 
-[Original data set](data/business-demographics.xlsx)
+In this dataset, survival rate refers to the proportion of businesses created in that year that were still alive after a specific number of years. For example, the 2-year survival rate of Camden in 2002 is the proportion of businesses created in Camden in 2002 that were still active 2 years later.  
 
-<br>
+A business 'death' is when a business is no longer having turnover or employment.
 
-[Prepared data set](data/prepared_data.xlsx)
+[Original data set](data/business-demographics.xlsx)  
+
+[Prepared data set from data preparation code](data/prepared_data1.xlsx)
 
 ### Data exploration
 
 [Data Exploration Notebook](data_exploration_notebook.ipynb)
 
  The Jupyter notebook has all the steps taken in the process of exploring the dataset, along with explanations on why these steps were taken.
+
+ New sheets were created as a result of the data exploration, so they were saved in a new file for future use.
+
+[Prepared data set from data exploration code](data/prepared_data2.xlsx)
 
 ### Images
 
