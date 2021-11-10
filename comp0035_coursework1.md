@@ -36,7 +36,7 @@ Therefore, TDPS was chosen to provide a high-level methodology to aid business u
 
 Aspiring business owners looking to find a location in London to start their business struggle to find the most appropriate area that would give their business the best chance for survival. With 60% of businesses failing within the first three years (May, 2019), it is important for aspiring business owners to do what they can to ensure their business has the best chance of long-term survival. Past research has shown that the location of a business plays a crucial factor in determining its survival chances (Fritsch et al., 2006). This is because important factors of business survival, such as access to labour markets, specialised services and customers, are related to the location of the startup. For example, choosing an area with lower economic activity might hinder the startup’s access to these important resources, making it harder for the startup to sustain itself after launch and decreasing its chances of survival. Thus, founders are faced with the important decision of choosing the most suitable location to launch their business and require the relevant data to enable them to make an informed decision. 
 
-Having to consider all these different factors may be difficult and time-consuming, especially when aspiring business owners don't have a background in entrepreneurship. In particular, London is one of the most popular places in the world for startups (Gauthier, 2021). However, different areas in london differ in the support they can offer startups. TThus, it would be much faster and more convenient to analyse past data on survival rates of businesses in different areas as this would shed light on whether the area is conducive for the survivability of startups. 
+Having to consider all these different factors may be difficult and time-consuming, especially when aspiring business owners don't have a background in entrepreneurship. In particular, London is one of the most popular places in the world for startups (Gauthier, 2021). However, different areas in london differ in the support they can offer startups. Thus, it would be much faster and more convenient to analyse past data on survival rates of businesses in different areas as this would shed light on whether the area is conducive for the survivability of startups. 
 
 As clients often have little experience working with data, the relevant data has to be processed and easily visualised in a way that is accessible to the client. The available dataset to be used consists of the number of new enterprises started each year in each borough in London from 2002 to 2018 and the percentage of these new enterprises that were still alive one, two, three, four and five years later. 
 
@@ -61,6 +61,9 @@ Ultimately, the question to be answered is 'Which borough in London is the best 
 ### Data preparation
 
 [Data Preparation](data_preparation.py)
+
+<br>
+
 [Data Preparation Notebook](data_preparation_notebook.ipynb)
 
 The Python file has only the necessary code to produce the prepared dataset. The Jupyter notebook has all the steps taken in the process of understanding and preparing the dataset, along with explanations on why these steps were taken.
@@ -69,6 +72,9 @@ The Python file has only the necessary code to produce the prepared dataset. The
 The given link contains three dataset files. However, only the first was chosen to be used as the data from the other two are included in the first dataset.
 
 [Original data set](data/business-demographics.xlsx)
+
+<br>
+
 [Prepared data set](data/prepared_data.xlsx)
 
 ### Data exploration
@@ -85,7 +91,7 @@ The given link contains three dataset files. However, only the first was chosen 
 ![5-Year Survival Rates Through the Years](charts/boxplot_5-year_survival_rate.png)
 ![Survival Rates for Outliers](charts/survival_rates_outliers.png)
 ![Average 5-Year Survival Rates](bargraph_ave_5-year_survival_rate.png)
-![Number of Active Enterprises in 2019](charts/bargraph_active_enterprises_2019)
+![Number of Active Enterprises in 2019](charts/bargraph_active_enterprises_2019.png)
 ![Average Death Rates](charts/bargraph_ave_deathrates.png)
 
 
