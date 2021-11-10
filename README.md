@@ -162,8 +162,6 @@ Issues blocking my progress (state ‘None’ if there are no issues):
 * Had some issues with my laptop which makes the laptop very laggy whenever Visual Studio Code is run. Have tried writing code on other platforms then copying it over. 
 
 ## References
-Anon, 2021. London maintains its Crown as one of the world's top startup hubs. London and Partners News. Available at: https://media.londonandpartners.com/news/london-maintains-its-crown-as-one-of-the-worlds-top-startup-hubs [Accessed October 24, 2021]. 
-
 Data Science Process Alliance, 2021b. Data Driven Scrum. Data Science Process Alliance. Available at: https://www.datascience-pm.com/data-driven-scrum/ [Accessed October 22, 2021]. 
 
 Data Science Process Alliance, 2021a. Team Data Science Process (TDSP). Data Science Process Alliance. Available at: https://www.datascience-pm.com/tdsp/ [Accessed October 22, 2021]. 
@@ -171,6 +169,8 @@ Data Science Process Alliance, 2021a. Team Data Science Process (TDSP). Data Sci
 Dunsby, M., 2021. Where is the London location to start a business?: Startups. Startups. Available at: https://startups.co.uk/analysis/where-is-the-best-place-in-london-to-start-a-business/ [Accessed October 24, 2021]. 
 
 Fritsch, M., Brixy, U. &amp; Falck, O., 2006. The effect of industry, region, and time on New Business Survival – a multi-dimensional analysis. Review of Industrial Organization. Available at: https://link.springer.com/article/10.1007/s11151-006-0018-4 [Accessed October 24, 2021]. 
+
+Gauthier, 2021. London maintains its Crown as one of the world's top startup hubs. London and Partners News. Available at: https://media.londonandpartners.com/news/london-maintains-its-crown-as-one-of-the-worlds-top-startup-hubs [Accessed October 24, 2021]. 
 
 May, R., 2019. Start-ups across the UK are going bust - they need more careful management for our economy to boom. The Telegraph. Available at: https://www.telegraph.co.uk/politics/2019/01/24/start-ups-across-uk-going-bust-need-careful-management-economy/ [Accessed October 24, 2021]. 
 
