@@ -6,6 +6,8 @@ coursework if you wish. Alternatively you can use video or audio to provide the 
 ## Requirements definition and analysis
 The term 'requirements' is used in the broader sense, user stories and/or use cases may be used.
 
+### Context diagram
+
 ### Requirements identification methods
 
 Firstly, a context diagram is built to gain insight into interface requirements. This is a form of interface analysis, a BABOK elicitation technique (International Institute of Business Analysis, 2015), and it enables the understanding of the users that send and receive data to and from the system at a high-level of abstraction. 
@@ -24,13 +26,31 @@ Data Driven Scrum (DDS) was chosen as the project methodology to guide the use o
 ### Documented and prioritised requirements
 Link to the full list of documented and prioritised requirements.
 
-Trello was used. Click the labels at the top of each card to see the name of the labels.
+Trello was used, here. Click the labels at the top of each card to see the name of the labels.
+
 
 
 ## Design
 ### Structure and flow of the interface
 
+#### Wireframes
+
+Moqups was used to create the wireframes for the web app. As the user of the web app would tend to use their laptops to access the app instead of other devices like their mobile phone, the sketch would assume the user is accessing the web app on their laptop.
+
+#### Class diagram
+
+A class diagram was created for a high level view of the classes and the relationships between the classes. Their attributes and methods of each class are also detailed in the diagram. [detail whether a data-driven/responsibility driven approach was chosen https://moodle.ucl.ac.uk/mod/page/view.php?id=3191437]
+
+
+#### Routes
+
+
 ### Relational database design
+
+#### Conceptual Design
+An ERD diagram is created.
+
+#### Logical Design
 
 ### Application structure
 
