@@ -6,8 +6,6 @@ coursework if you wish. Alternatively you can use video or audio to provide the 
 ## Requirements definition and analysis
 The term 'requirements' is used in the broader sense, user stories and/or use cases may be used.
 
-### Context diagram
-
 ### Requirements identification methods
 
 Firstly, a context diagram is built to gain insight into interface requirements. This is a form of interface analysis, a BABOK elicitation technique (International Institute of Business Analysis, 2015), and it enables the understanding of the users that send and receive data to and from the system at a high-level of abstraction. 
@@ -15,6 +13,10 @@ Firstly, a context diagram is built to gain insight into interface requirements.
 Ideally, a focus group would also be conducted with aspiring business owners to learn about their requirements for the web application. During a focus group, participants can build on the responses of others and comment on any differing opinions. This makes focus groups useful for understanding a collective view (Kitzinger, 1995) and would allow the product team to gain an understanding of the aspiring business owners’ needs and how the proposed web application can best support these needs. 
 
 However, due to ethical and time restrictions, brainstorming will be used instead of focus groups. The context diagram will guide the process of brainstorming so that requirements of all users of the system can be identified.
+
+### Context diagram
+
+
 
 
 ### Requirement specification method
@@ -33,13 +35,17 @@ Trello was used, here. Click the labels at the top of each card to see the name 
 ## Design
 ### Structure and flow of the interface
 
+#### User flows
+
 #### Wireframes
 
-Moqups was used to create the wireframes for the web app. As the user of the web app would tend to use their laptops to access the app instead of other devices like their mobile phone, the sketch would assume the user is accessing the web app on their laptop.
+Lucidchart was used to create the wireframes for the web app. As the user of the web app would tend to use their laptops to access the app instead of other devices like their mobile phone, the sketch would assume the user is accessing the web app on their laptop.
+
+![Wireframe 1. User logs in](wireframes/1_user_logs_in.png)
 
 #### Class diagram
 
-A class diagram was created for a high level view of the classes and the relationships between the classes. Their attributes and methods of each class are also detailed in the diagram. [detail whether a data-driven/responsibility driven approach was chosen https://moodle.ucl.ac.uk/mod/page/view.php?id=3191437]
+A class diagram was created for a high level view of the classes and the relationships between the classes. Their attributes and methods of each class are also detailed in the diagram. [detail whether a data-driven driven approach was chosen https://moodle.ucl.ac.uk/mod/page/view.php?id=3191437]
 
 
 #### Routes
@@ -64,35 +70,10 @@ The tests should be in a separate and appropriately named file/directory.
 ### Test results
 Provide evidence that the tests have been run and the results of the tests (e.g. screenshot).
 
-### Continuous integration (optional)
+### Continuous integration 
 Consider using GitHub Actions (or other) to establish a continuous integration pipeline. If you do so then please provide a link to the .yml and a screenshot of the results of a workflow run.
 
-## Weekly progress reports
 
-Copy and paste from Moodle or use the following structure. Delete this instruction text.
-
-What I did in the last week:
-
-- item
-- item
-
-What I plan to do in the next week:
-
-- item
-- item
-
-Issues blocking my progress (state ‘None’ if there are no issues):
-
-- item
-- item
-
-### Report 1
-
-### Report 2
-
-### Report 3
-
-### Report 4
 
 ## References
 
