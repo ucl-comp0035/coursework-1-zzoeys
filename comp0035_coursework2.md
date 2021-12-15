@@ -12,7 +12,7 @@ Firstly, a context diagram is built to gain insight into interface requirements.
 
 Ideally, a focus group would also be conducted with aspiring business owners to learn about their requirements for the web application. During a focus group, participants can build on the responses of others and comment on any differing opinions. This makes focus groups useful for understanding a collective view (Kitzinger, 1995) and would allow the product team to gain an understanding of the aspiring business owners’ needs and how the proposed web application can best support these needs. 
 
-However, due to ethical and time restrictions, brainstorming will be used instead of focus groups. The context diagram will guide the process of brainstorming so that requirements of all users of the system can be identified.
+However, due to ethical and time restrictions, brainstorming will be used instead of focus groups. The context diagram will guide the process of brainstorming so that requirements of all users of the system can be identified. User stories are also added and refined as the design process is carried out, such as when more detail was added to the acceptance criteria after drawing the wireframe. For example, the acceptance criteria for a separate view to enlarge the data on the dashboard was added as design research was conducted to specify the wireframe for the dashboard. 
 
 ### Context diagram
 
@@ -21,7 +21,9 @@ However, due to ethical and time restrictions, brainstorming will be used instea
 
 ### Requirement specification method
 
-Data Driven Scrum (DDS) was chosen as the project methodology to guide the use of sprint planning as DDS is an agile methodology and a core principle of agile development is developing software that is user-focused. Thus, user stories was chosen as the method of requirement specification as they keep the product team focused on the value of their software’s features and how they address a particular need of the client (https://www.atlassian.com/agile/project-management/user-stories). User stories articulate the desired purpose of the system and provide the basis for communication and collaboration between the product team about the user’s requirements. User stories are also meant to be easily understood and revised, which is helpful for an inexperienced product team like that of this project.
+Data Driven Scrum (DDS) was chosen as the project methodology to guide the use of sprint planning as DDS is an agile methodology and a core principle of agile development is developing software that is user-focused. Thus, creating user stories was chosen as the method of requirement specification as they keep the product team focused on the value of their software’s features and how they address a particular need of the client (https://www.atlassian.com/agile/project-management/user-stories). User stories articulate the desired purpose of the system and provide the basis for communication and collaboration between the product team about the user’s requirements. User stories are also meant to be easily understood and revised, which is helpful for an inexperienced product team like that of this project.
+
+The feature of a developer being able to whitelist a user's emails so that 
 
 ### Prioritisation method
 
@@ -31,11 +33,15 @@ Link to the full list of documented and prioritised requirements.
 Trello was used, here. Click the labels at the top of each card to see the name of the labels.
 
 
-
 ## Design
 ### Structure and flow of the interface
 
 #### User flows
+
+#### Design Research
+
+A dashboard for the data visualisations was chosen to be created as it is an accessible way of visually consolidating the most relevant information for a user to view (Subotin, 2017). To improve usability, it is important for the dashboard to include filters that enable users to customize what data is displayed. It is also important for the data to be displayed in a minimized view, but with a feature that allows users to show more details in a separate view. These features were thus added as acceptance criteria in the user stories.
+
 
 #### Wireframes
 
@@ -45,7 +51,11 @@ Lucidchart was used to create the wireframes for the web app. As the user of the
 
 #### Class diagram
 
-A class diagram was created for a high level view of the classes and the relationships between the classes. Their attributes and methods of each class are also detailed in the diagram. [detail whether a data-driven driven approach was chosen https://moodle.ucl.ac.uk/mod/page/view.php?id=3191437]
+A class diagram was created for a high level visualisation of the model of the web application. A data-driven approach was chosen to identify the classes and their attributes and methods, and the relationships between the classes. This approach was chosen as it utilises analysing the user stories to draw out potential classes. Thus, when the user stories get refined throughout the development process as feedback from external stakeholders is received, it would be easier to detect how the classes would change. As a responsibility-driven approach focuses on identifying all the requirements from the start , it may not suit this project which is involves an inexperienced team so the user stories would change over time.
+
+To create the filtering function as specified in the user stories, the Filter Pattern was chosen as the design function (Tutorials Point, 2021). It involves 
+
+Criteria interface and concrete classes implementing this interface to filter list of Person objects.
 
 
 #### Routes
@@ -84,6 +94,11 @@ Delete this instruction text before submitting:
 - Use any [referencing style](https://library-guides.ucl.ac.uk/referencing-plagiarism/referencing-styles) that you are
   used to using in your course.
 
+
 International Institute of Business Analysis. (2015). A Guide to the Business Analysis Body of Knowledge (Babok Guide). International Institute of Business Analysis. 
 
 Kitzinger, J., 1995. ‘Qualitative Research: Introducing focus groups’. BMJ, 311(7000), pp.299–302. Available at: <https://www.bmj.com/content/311/7000/299.short?casa_token=uJ4gtahRwrAAAAAA:2k59gth8O5qcSTJ9OTiid4f8Gu-u5oXe8svsPsgYXGLltwIUv0kjsTXThj-n-lAxUbHrtoeofWQ4> [Accessed Nov 24, 2021]. 
+
+Subotin, S., 2017. Dashboard Design - Considerations and Best Practices. Designers. Available at: https://www.toptal.com/designers/data-visualization/dashboard-design-best-practices [Accessed December 13, 2021]. 
+
+TutorialsPoint https://www.tutorialspoint.com/design_pattern/filter_pattern.htm 
