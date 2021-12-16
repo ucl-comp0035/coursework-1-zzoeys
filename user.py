@@ -1,7 +1,8 @@
 # Write unit tests that test aspects of this class. You may modify the code or extend it by adding additional
 # attributes and methods. The code has not been tested and may contain bugs.
-from datetime import date
 
+import hashlib
+from datetime import date
 import bcrypt
 
 
@@ -90,3 +91,7 @@ class User(object):
             return True
         else:
             return False
+
+kat = User('katherine', 'rose', 'katherine_rose@gmail.com', 'london2021!', date(1998, 9, 5) )
+
+print(kat.calculate_age())

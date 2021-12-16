@@ -1,10 +1,15 @@
 # Coursework 2
 
-Most students will use the same repository for coursework 2. You may use this file to present the results of that
-coursework if you wish. Alternatively you can use video or audio to provide the explanations instead of writing them.
+## Technical information
+### Repository URL
+[Repository](https://github.com/ucl-comp0035/coursework-1-zzoeys.git)
+
+### Set-up instructions
+
+No additional requirements beyond requirements.txt.
 
 ## Requirements definition and analysis
-The term 'requirements' is used in the broader sense, user stories and/or use cases may be used.
+
 
 ### Requirements identification methods
 
@@ -38,7 +43,7 @@ Trello was used, here. Click the labels at the top of each card to see the name 
 
 #### User flows
 
-#### Design Research
+#### Design Research for Application Design
 
 A dashboard for the data visualisations was chosen to be created as it is an accessible way of visually consolidating the most relevant information for a user to view (Subotin, 2017). To improve usability, it is important for the dashboard to include filters that enable users to customize what data is displayed. It is also important for the data to be displayed in a minimized view, but with a feature that allows users to show more details in a separate view. These features were thus added as acceptance criteria in the user stories.
 
@@ -51,37 +56,80 @@ Lucidchart was used to create the wireframes for the web app. As the user of the
 
 #### Class diagram
 
-A class diagram was created for a high level visualisation of the model of the web application. A data-driven approach was chosen to identify the classes and their attributes and methods, and the relationships between the classes. This approach was chosen as it utilises analysing the user stories to draw out potential classes. Thus, when the user stories get refined throughout the development process as feedback from external stakeholders is received, it would be easier to detect how the classes would change. As a responsibility-driven approach focuses on identifying all the requirements from the start , it may not suit this project which is involves an inexperienced team so the user stories would change over time.
+A class diagram was created for a high level visualisation of the model of the web application. [why create a class diagram]
 
-To create the filtering function as specified in the user stories, the Filter Pattern was chosen as the design function (Tutorials Point, 2021). It involves 
+A data-driven approach was chosen to identify the classes and their attributes and methods, and the relationships between the classes. This approach was chosen as it utilises analysing the user stories to draw out potential classes. Thus, when the user stories get refined throughout the development process as feedback from external stakeholders is received, it would be easier to detect how the classes would change. As a responsibility-driven approach focuses on identifying all the requirements from the start , it may not suit this project which is involves an inexperienced team so the user stories would change over time.
+
+To create the filtering function as specified in the user stories, the Filter Pattern was chosen as the design function (Tutorials Point, 2021). It involves utilising concrete classes to implement the operations and attributes defined by the interface class. 
+
+As it is not possible to create of class of type 'interface' in Python unlike in Java, the design pattern can still be applied by utilising different methods of creating a class with similar functions to that of an 'interface' class. 
 
 Criteria interface and concrete classes implementing this interface to filter list of Person objects.
 
 
+<from sarah>
+Conceptually this makes sense. A class diagram is a model of your application. As a model of your design intent I personally think this makes sense. You are correct in that you can't create a class of type interface in Python, you have choices (you may have already read the article but if not see https://realpython.com/python-interface/). Given that I don't know which students' coursework will be moderated, I would suggest that rather than try to modify the diagram again that you write in the markdown and explain your reasons for applying this design pattern. You can also note that the diagram is modelling the interface concept (ie that you want there to be a filter method for which the actual implementation is handled by the classes that use it) even though you are aware that there is no specific interface keyword in Python.
+
+
+Low coupling etc
+
 #### Routes
+
+
+| Route | View | Controller Function |
+| :----- | :----- | :----- |
+| /login | 1.1 | login() Checks the entered account info against the details in the database, returns an error if details are incorrect, otherwise redirects users to the main page. |
+| /signup | 1.1.1 | signup() Checks the entered email against the whitelisted emails in the database, returns an error if the email is not present, otherwise store the login details in the database and redirects users to the main page. |
+| /main | 1.2 | index() Renders home page. |
+| /visualisation | 1.1.1 | filter() enlarge() |
+| /visualisation/create_filter |  | create_filter() |
+| /forum |  | delete() edit() (change you can't have more than one controller in a view)|
+| /forum/create |  | submit() |
+| /news |  |  |
+| /settings |  | reset_password() |
+| /settings/developer |  | whitelist() |
 
 
 ### Relational database design
 
-#### Conceptual Design
+#### ERD
 An ERD diagram is created.
 
-#### Logical Design
+For the saved filters, instead of storing the list of boroughs and years in the filter as a list as modelled in the class diagram, first normalisation was performed. Other considerations made were to introduce a *user id* field to ensue that the primary key of each table is an integer 
 
-### Application structure
+SQLite, the database to be used, doesn't allow data to be stored as a date-time format and boolean, so the integer format for UNIX time
 
+Boolean values are stored as integers 0 (false) and 1 (true) [https://www.sqlite.org/datatype3.html]
+
+#### Data dictionary
+
+| Key | Attribute | Data type | Constraint |
+| :----- | :----- | :----- | :----- |
+| PK | user_id | Integer | Not null, |
+|  | username | Text | Not null |
+|  | name | Text | Not null |
+
+|  | name | Integer | 0 or 1 |
 
 ## Testing
 ### Choice of unit testing library
 
+Pytest was chosen because it is simpler to use and unlike unittest, doesn't [require creating classes and defining the testing functions within that class]
+scalable and simple tests
+[https://www.pythonpool.com/python-unittest-vs-pytest/]
+
+To ensure code quality, standard conventions for Python from PEP8, PEP257 were used
+
 ### Tests
-The tests should be in a separate and appropriately named file/directory.
+test_user
+
 
 ### Test results
 Provide evidence that the tests have been run and the results of the tests (e.g. screenshot).
 
 ### Continuous integration 
 Consider using GitHub Actions (or other) to establish a continuous integration pipeline. If you do so then please provide a link to the .yml and a screenshot of the results of a workflow run.
+
 
 
 
