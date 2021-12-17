@@ -3,3 +3,7 @@ pandas
 numpy
 bcrypt
 openpyxl
+selenium
+axe-selenium-python
+pytest
+pytest-cov
