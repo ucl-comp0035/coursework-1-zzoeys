@@ -112,13 +112,22 @@ Boolean values are stored as integers 0 (false) and 1 (true) [https://www.sqlite
 |  | name | Integer | 0 or 1 |
 
 ## Testing
+
+Unit tests
+
 ### Choice of unit testing library
 
 Pytest was chosen because it is simpler to use and unlike unittest, doesn't [require creating classes and defining the testing functions within that class]
 scalable and simple tests
 [https://www.pythonpool.com/python-unittest-vs-pytest/]
 
+Accessibilty of testing using selenium axe [https://pypi.org/project/axe-selenium-python-dev/]
+The code is in the file test_accessibility, however, it cannot be run as geckodriver has to be installed on Firefox [https://www.guru99.com/gecko-marionette-driver-selenium.html] When the webpage has been launched, this will be added
+
 To ensure code quality, standard conventions for Python from PEP8, PEP257 were used
+
+Process of checking for bugs in the project development stage
+https://www.mitchlacey.com/blog/managing-bugs-in-scrum-and-agile-projects/
 
 ### Tests
 test_user

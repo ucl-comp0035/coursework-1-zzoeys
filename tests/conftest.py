@@ -1,13 +1,15 @@
 import pytest
-import user as user
+import user
 from datetime import date
 
 @pytest.fixture(scope='module')
-def test_user_1():
-    test_user_1 = user.User('katherine', 'rose', 'katherine_rose@gmail.com', 'london2021!', date(1998, 9, 5))
-    yield test_user_1
+def normal_user():
+    '''Returns a normal user of age 23'''
+    normal_user = user.User('katherine', 'rose', 'katherine_rose@gmail.com', 'london2021!', date(1998, 9, 5))
+    yield normal_user
 
 @pytest.fixture(scope='module')
-def test_user_2():
-    test_user_2 = user.User('zoelle', 'rose', 'zoelle_rose@gmail.com', 'singapore2021!', date.today())
-    yield test_user_2
+def edge_case_date():
+    '''Returns a user whose dob is today'''
+    edge_case_date = user.User('zoelle', 'rose', 'zoelle_rose@gmail.com', 'singapore2021!', date.today())
+    yield edge_case_date
