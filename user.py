@@ -94,4 +94,5 @@ class User(object):
 
 kat = User('katherine', 'rose', 'katherine_rose@gmail.com', 'london2021!', date(1998, 9, 5) )
 
-print(kat.calculate_age())
+print(kat.hashed_password())
+

@@ -132,6 +132,8 @@ https://www.mitchlacey.com/blog/managing-bugs-in-scrum-and-agile-projects/
 ### Tests
 test_user
 
+User acceptance testing
+
 
 ### Test results
 Provide evidence that the tests have been run and the results of the tests (e.g. screenshot).
