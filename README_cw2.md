@@ -141,7 +141,7 @@ Provide evidence that the tests have been run and the results of the tests (e.g.
 ### Continuous integration 
 Consider using GitHub Actions (or other) to establish a continuous integration pipeline. If you do so then please provide a link to the .yml and a screenshot of the results of a workflow run.
 
-
+[consider the benefits of using such tools in the development phase of a project]
 
 
 ## References
