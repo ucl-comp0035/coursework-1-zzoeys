@@ -92,7 +92,3 @@ class User(object):
         else:
             return False
 
-kat = User('katherine', 'rose', 'katherine_rose@gmail.com', 'london2021!', date(1998, 9, 5) )
-
-print(kat.hashed_password())
-
