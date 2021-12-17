@@ -124,7 +124,6 @@ scalable and simple tests
 Accessibilty of testing using selenium axe [https://pypi.org/project/axe-selenium-python-dev/]
 The code is in the file test_accessibility, however, it cannot be run as geckodriver has to be installed on Firefox [https://www.guru99.com/gecko-marionette-driver-selenium.html] When the webpage has been launched, this will be added
 
-To ensure code quality, standard conventions for Python from PEP8, PEP257 were used
 
 Process of checking for bugs in the project development stage
 https://www.mitchlacey.com/blog/managing-bugs-in-scrum-and-agile-projects/
@@ -137,6 +136,13 @@ User acceptance testing
 
 ### Test results
 Provide evidence that the tests have been run and the results of the tests (e.g. screenshot).
+
+#### Code quality
+
+To ensure code quality, standard conventions for Python from PEP8, PEP257 were used
+
+
+[what did the linting tell you]
 
 ### Continuous integration 
 Consider using GitHub Actions (or other) to establish a continuous integration pipeline. If you do so then please provide a link to the .yml and a screenshot of the results of a workflow run.
