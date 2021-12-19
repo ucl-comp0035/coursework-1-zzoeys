@@ -127,7 +127,7 @@ SQLite, the database to be used, doesn't allow data to be stored as a date-time 
 To model the database with the saved filters, instead of storing the list of boroughs and years in the saved filter as a list as modelled in the class diagram, first normalisation was performed. Storing these details as a list would mean that a table cell would have one or more values. To avoid this, two tables were created linking the filter_id of the filter to the years and borough_id's of the boroughs that are in the filter. The tables, named filter_borough and filter_year, would also solve the many-to-many relationship between saved filters, boroughs and years: one filter can have many boroughs and years and one borough/year can belong to multiple years. 
 
 ![Saved filters](diagrams/ERDs/ERD_saved_filter.png){:height="50%" width="50%"}
-<img src="https://cloud.githubusercontent.com/assets/yourgif.gif" width="40%" height="40%">
+<img src=diagrams/ERDs/ERD_saved_filter.png width="40%" height="40%">
 
 In the process of second normalisation, the table borough_name was created so that the attribute borough_name is only dependent on borough_id and not the combination of filter_id and borough_id. It also avoids duplication of data as it prevents having to store the borough name every time a borough is linked to a filter. The resulting tables have no transitive functional dependencies, so the requirements for third normalisation are satisfied. 
 
