@@ -28,9 +28,11 @@ However, due to ethical and time restrictions, brainstorming will be used instea
 
 Data Driven Scrum (DDS) was chosen as the project methodology to guide the use of sprint planning as DDS is an agile methodology and a core principle of agile development is developing software that is user-focused. Thus, creating user stories was chosen as the method of requirement specification as they keep the product team focused on the value of their software’s features and how they address a particular need of the client (https://www.atlassian.com/agile/project-management/user-stories). User stories articulate the desired purpose of the system and provide the basis for communication and collaboration between the product team about the user’s requirements. User stories are also meant to be easily understood and revised, which is helpful for an inexperienced product team like that of this project.
 
-The feature of a developer being able to whitelist a user's emails so that 
+The feature of a developer being able to whitelist a user's emails so that only the project's clients could sign up on the site
 
 ### Prioritisation method
+
+MOSCOW
 
 ### Documented and prioritised requirements
 Link to the full list of documented and prioritised requirements.
@@ -66,54 +68,77 @@ As it is not possible to create of class of type 'interface' in Python unlike in
 
 Criteria interface and concrete classes implementing this interface to filter list of Person objects.
 
+Despite trying to ensure low coupling and that inheritance causes 
+[why would we have an inheritance relationship]
+
+
 
 <from sarah>
 Conceptually this makes sense. A class diagram is a model of your application. As a model of your design intent I personally think this makes sense. You are correct in that you can't create a class of type interface in Python, you have choices (you may have already read the article but if not see https://realpython.com/python-interface/). Given that I don't know which students' coursework will be moderated, I would suggest that rather than try to modify the diagram again that you write in the markdown and explain your reasons for applying this design pattern. You can also note that the diagram is modelling the interface concept (ie that you want there to be a filter method for which the actual implementation is handled by the classes that use it) even though you are aware that there is no specific interface keyword in Python.
 
 
-Low coupling etc
+
 
 #### Routes
 
+(a controller is what happens when the user goes to that view and that controller can get called when something happens in that view)
 
 | Route | View | Controller Function |
 | :----- | :----- | :----- |
 | /login | 1.1 | login() Checks the entered account info against the details in the database, returns an error if details are incorrect, otherwise redirects users to the main page. |
-| /signup | 1.1.1 | signup() Checks the entered email against the whitelisted emails in the database, returns an error if the email is not present, otherwise store the login details in the database and redirects users to the main page. |
-| /main | 1.2 | index() Renders home page. |
-| /visualisation | 1.1.1 | filter() enlarge() |
-| /visualisation/create_filter |  | create_filter() |
-| /forum |  | delete() edit() (change you can't have more than one controller in a view)|
-| /forum/create |  | submit() |
+| /signup | 1.1.1 | signup() Checks the entered email against the whitelisted emails in the database, returns an error if the email is not present, otherwise stores the login details in the database and redirects users to the main page. |
+| /main | 1.2 | index() Renders the home page with the user's first saved visualisation. filter() Renders the visualisations according to the saved filter chosen by the user. enlarge() Shows the visualisation that the user clicks on in a larger pop-up.|
+| /visualisation | 2.1 | filter() Renders the visualisations according to the boroughs and years selected by the user. enlarge() Shows the visualisation that the user clicks on in a larger pop-up. |
+| /visualisation/create_filter | 2.1.2 | create_filter() Saves the current boroughs and years selected by the user as a saved filter under the name written by the user|
+| /forum | 3.1 | create_new() Shows a pop-up where the user can write the title and body of the forum post they want to write|
+| /forum/read/forum_post_id (user's post)| 3.2 | edit() Shows a pop-up where the user can edit the body of their post. comment() |
+| /forum/read/forum_post_id (other user's post)| 3.3 | comment() |
+| /forum/create/post |  | submit() |
+| /forum/create/comment |  | submit() |
 | /news |  |  |
 | /settings |  | reset_password() |
-| /settings/developer |  | whitelist() |
+| /whitelist |  | whitelist() Whitelists a user's email by adding their email to the database of whitelisted emails and |
 
 
 ### Relational database design
 
 #### ERD
-An ERD diagram is created.
 
-For the saved filters, instead of storing the list of boroughs and years in the filter as a list as modelled in the class diagram, first normalisation was performed. Other considerations made were to introduce a *user id* field to ensue that the primary key of each table is an integer 
+Firstly, considerations were made to ensure that the primary key of each table is an integer, so the *user id*, *forum_post_id*, *forum_comment_id* and *borough id* attributes were added
 
-SQLite, the database to be used, doesn't allow data to be stored as a date-time format and boolean, so the integer format for UNIX time
+SQLite, the database to be used, doesn't allow data to be stored as a date-time data type, so the integer format for UNIX time is used. Boolean values are also not supported so they are stored as integers 0 (false) and 1 (true) [https://www.sqlite.org/datatype3.html].
 
-Boolean values are stored as integers 0 (false) and 1 (true) [https://www.sqlite.org/datatype3.html]
+To model the database with the saved filters, instead of storing the list of boroughs and years in the saved filter as a list as modelled in the class diagram, first normalisation was performed. Storing these details as a list would mean that a table cell would have one or more values. To avoid this, two tables were created linking the filter_id of the filter to the years and borough_id's of the boroughs that are in the filter. The tables, named filter_borough and filter_year, would also solve the many-to-many relationship between saved filters, boroughs and years: one filter can have many boroughs and years and one borough/year can belong to multiple years. 
+
+![Saved filters](diagrams/ERDs/ERD_saved_filter.png)
+
+In the process of second normalisation, the table borough_name was created so that the attribute borough_name is only dependent on borough_id and not the combination of filter_id and borough_id. It also avoids duplication of data as it prevents having to store the borough name every time a borough is linked to a filter. The resulting tables have no transitive functional dependencies, so the requirements for third normalisation are satisfied. 
+
+To model the databases for forum posts and forum comments, referential integrity is ensured so that each foreign key references an existing primary key in the parent table. These tables also satisfy the requirements for first, second and third normalisation.
+
+A table to store the whitelisted emails added by developers was created without any relationships with other tables. This is because the table with whitelisted emails only serves one purpose to check whether new users are authenticated by checking their emails against the list of whitelisted emails. Only once the users have signed up successfully are their details added to the user database table. As the table of whitelisted emails is still necessary to model the whole process of a user's journey while using the web app despite it having no relationships to other tables, it is still appropriate to have it [https://dba.stackexchange.com/questions/1088/is-it-ok-to-have-an-entity-in-an-er-diagram-without-a-relationship].
+
+The resulting ERD is shown below:
+
 
 #### Data dictionary
 
-| Key | Attribute | Data type | Constraint |
-| :----- | :----- | :----- | :----- |
-| PK | user_id | Integer | Not null, |
-|  | username | Text | Not null |
-|  | name | Text | Not null |
 
-|  | name | Integer | 0 or 1 |
+| Table | Column name | Key |  Data type | Constraint | Description |
+| :----- | :----- | :----- | :----- | :----- | :----- |
+| user | user_id | PK | Integer | Not null, auto increment | Unique identifer |
+|  | username |  | Text | Not null |
+|  | name  |  | Text | Not null |
+|  | email  |  | Text | Not null, check with regex that the email is in a valid @ and .com format |
+|  | password  |  | Text | Not null, hashed password |
+|  | is_developer  |  | Integer | Not null, 0 for False or 1 for True |
+
+
+|  | name | Text | Not null |
 
 ## Testing
 
-Unit tests
+
 
 ### Choice of unit testing library
 
@@ -129,7 +154,8 @@ Process of checking for bugs in the project development stage
 https://www.mitchlacey.com/blog/managing-bugs-in-scrum-and-agile-projects/
 
 ### Tests
-test_user
+
+[test folder showcase thing with explanations on what each file does]
 
 User acceptance testing
 
@@ -144,11 +170,14 @@ To ensure code quality, standard conventions for Python from PEP8, PEP257 were u
 
 [what did the linting tell you]
 
+black?
+
 ### Continuous integration 
 Consider using GitHub Actions (or other) to establish a continuous integration pipeline. If you do so then please provide a link to the .yml and a screenshot of the results of a workflow run.
 
 [consider the benefits of using such tools in the development phase of a project]
 
+As with the Python Application workflow on Github Actions, the flake8 linter was run. 
 
 ## References
 
