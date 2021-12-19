@@ -1,5 +1,19 @@
 # Coursework 2
 
+to do:
+
+prioritisation
+user flow
+user stories
+context diagram
+wireframes
+routes
+erd 
+erd table
+unit tests
+flake8 and black
+ci worth
+
 ## Technical information
 ### Repository URL
 [Repository](https://github.com/ucl-comp0035/coursework-1-zzoeys.git)
@@ -28,16 +42,13 @@ However, due to ethical and time restrictions, brainstorming will be used instea
 
 Data Driven Scrum (DDS) was chosen as the project methodology to guide the use of sprint planning as DDS is an agile methodology and a core principle of agile development is developing software that is user-focused. Thus, creating user stories was chosen as the method of requirement specification as they keep the product team focused on the value of their software’s features and how they address a particular need of the client (https://www.atlassian.com/agile/project-management/user-stories). User stories articulate the desired purpose of the system and provide the basis for communication and collaboration between the product team about the user’s requirements. User stories are also meant to be easily understood and revised, which is helpful for an inexperienced product team like that of this project.
 
-The feature of a developer being able to whitelist a user's emails so that only the project's clients could sign up on the site
-
 ### Prioritisation method
 
-MOSCOW
+The MoSCoW prioritisation method was chosen as it complements the use of user stories and agile projects (Agile Business, 2021). Though it is simple, it is provides enough detail about 'Must Have', 'Should Have', 'Could Have' and 'Won't Have this time' requirements that help project teams set and manage priorities. 
 
 ### Documented and prioritised requirements
-Link to the full list of documented and prioritised requirements.
 
-Trello was used, here. Click the labels at the top of each card to see the name of the labels.
+Trello was used, here. Please click the labels at the top of each card to see the name of the labels.
 
 
 ## Design
@@ -45,9 +56,16 @@ Trello was used, here. Click the labels at the top of each card to see the name 
 
 #### User flows
 
+
 #### Design Research for Application Design
 
 A dashboard for the data visualisations was chosen to be created as it is an accessible way of visually consolidating the most relevant information for a user to view (Subotin, 2017). To improve usability, it is important for the dashboard to include filters that enable users to customize what data is displayed. It is also important for the data to be displayed in a minimized view, but with a feature that allows users to show more details in a separate view. These features were thus added as acceptance criteria in the user stories.
+
+
+#### Detailed use cases
+
+To guide the creation of the wireframes, a detailed use case was created for the process of a user signing up. The creation of a use case was guided by the acceptance criteria of the user stories, but helps to elicit more detailed acceptance criteria. For example, the feature of a developer being able to whitelist a user's emails so that only the project's clients could sign up on the site was added while drawing up the use case.
+
 
 
 #### Wireframes
@@ -62,9 +80,7 @@ A class diagram was created for a high level visualisation of the model of the w
 
 A data-driven approach was chosen to identify the classes and their attributes and methods, and the relationships between the classes. This approach was chosen as it utilises analysing the user stories to draw out potential classes. Thus, when the user stories get refined throughout the development process as feedback from external stakeholders is received, it would be easier to detect how the classes would change. As a responsibility-driven approach focuses on identifying all the requirements from the start , it may not suit this project which is involves an inexperienced team so the user stories would change over time.
 
-To create the filtering function as specified in the user stories, the Filter Pattern was chosen as the design function (Tutorials Point, 2021). It involves utilising concrete classes to implement the operations and attributes defined by the interface class. 
-
-As it is not possible to create of class of type 'interface' in Python unlike in Java, the design pattern can still be applied by utilising different methods of creating a class with similar functions to that of an 'interface' class. 
+To create the filtering function as specified in the user stories, the Filter Pattern was chosen as the design function (Tutorials Point, 2021). It involves utilising concrete classes to implement the operations and attributes defined by the interface class. As Python does not have an 'interface' keyword unlike Java, the design pattern can still be applied by utilising different methods of creating a class with similar functions to that of an 'interface' class (Real Python, 2021). 
 
 Criteria interface and concrete classes implementing this interface to filter list of Person objects.
 
@@ -106,11 +122,12 @@ Conceptually this makes sense. A class diagram is a model of your application. A
 
 Firstly, considerations were made to ensure that the primary key of each table is an integer, so the *user id*, *forum_post_id*, *forum_comment_id* and *borough id* attributes were added
 
-SQLite, the database to be used, doesn't allow data to be stored as a date-time data type, so the integer format for UNIX time is used. Boolean values are also not supported so they are stored as integers 0 (false) and 1 (true) [https://www.sqlite.org/datatype3.html].
+SQLite, the database to be used, doesn't allow data to be stored as a date-time data type, so the integer format for UNIX time is used. Boolean values are also not supported so they are stored as integers 0 (false) and 1 (true) (SQLite, 2021).
 
 To model the database with the saved filters, instead of storing the list of boroughs and years in the saved filter as a list as modelled in the class diagram, first normalisation was performed. Storing these details as a list would mean that a table cell would have one or more values. To avoid this, two tables were created linking the filter_id of the filter to the years and borough_id's of the boroughs that are in the filter. The tables, named filter_borough and filter_year, would also solve the many-to-many relationship between saved filters, boroughs and years: one filter can have many boroughs and years and one borough/year can belong to multiple years. 
 
-![Saved filters](diagrams/ERDs/ERD_saved_filter.png)
+![Saved filters](diagrams/ERDs/ERD_saved_filter.png){:height="50%" width="50%"}
+<img src="https://cloud.githubusercontent.com/assets/yourgif.gif" width="40%" height="40%">
 
 In the process of second normalisation, the table borough_name was created so that the attribute borough_name is only dependent on borough_id and not the combination of filter_id and borough_id. It also avoids duplication of data as it prevents having to store the borough name every time a borough is linked to a filter. The resulting tables have no transitive functional dependencies, so the requirements for third normalisation are satisfied. 
 
@@ -126,12 +143,12 @@ The resulting ERD is shown below:
 
 | Table | Column name | Key |  Data type | Constraint | Description |
 | :----- | :----- | :----- | :----- | :----- | :----- |
-| *user* | user_id | PK | Integer | Not null, auto increment | Unique identifer |
-|  | username |  | Text | Not null |
-|  | name  |  | Text | Not null |
-|  | email  |  | Text | Not null, check with regex that the email is in a valid @ and .com format |
-|  | password  |  | Text | Not null, hashed password |
-|  | is_developer  |  | Integer | Not null, 0 for False or 1 for True |
+| user | user_id | PK | Integer | Not null, auto increment | Unique identifer |
+| user | username |  | Text | Not null | |
+| user | name  |  | Text | Not null | User's name, can be first name, last name or full name |
+| user | email  |  | Text | Not null, check with regex that the email is in a valid @ and .com format | User's email that has been whitelisted | 
+| user | password  |  | Text | Not null | Hashed password |
+| user | is_developer  |  | Integer | Not null, 0 for False or 1 for True | Whether a user has developer permissions  |
 
 
 |  | name | Text | Not null |
@@ -181,17 +198,15 @@ As with the Python Application workflow on Github Actions, the flake8 linter was
 
 ## References
 
-Delete this instruction text before submitting:
-
-- Include references to any templates you have used.
-- If you justify any of your choices with references then remember to also include these.
-- Use any [referencing style](https://library-guides.ucl.ac.uk/referencing-plagiarism/referencing-styles) that you are
-  used to using in your course.
-
+Agile Business, 2021. 10 Moscow Prioritisation - Agile Business. Agile Business Consortium. Available at: https://www.agilebusiness.org/page/ProjectFramework_10_MoSCoWPrioritisation [Accessed December 19, 2021]. 
 
 International Institute of Business Analysis. (2015). A Guide to the Business Analysis Body of Knowledge (Babok Guide). International Institute of Business Analysis. 
 
 Kitzinger, J., 1995. ‘Qualitative Research: Introducing focus groups’. BMJ, 311(7000), pp.299–302. Available at: <https://www.bmj.com/content/311/7000/299.short?casa_token=uJ4gtahRwrAAAAAA:2k59gth8O5qcSTJ9OTiid4f8Gu-u5oXe8svsPsgYXGLltwIUv0kjsTXThj-n-lAxUbHrtoeofWQ4> [Accessed Nov 24, 2021]. 
+
+Real Python, 2021. Implementing an interface in Python. Real Python. Available at: https://realpython.com/python-interface/ [Accessed December 19, 2021]. 
+
+SQLite, 2021. Datatypes in SQLite. Datatypes In SQLite. Available at: https://www.sqlite.org/datatype3.html [Accessed December 19, 2021]. 
 
 Subotin, S., 2017. Dashboard Design - Considerations and Best Practices. Designers. Available at: https://www.toptal.com/designers/data-visualization/dashboard-design-best-practices [Accessed December 13, 2021]. 
 
