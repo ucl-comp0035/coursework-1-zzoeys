@@ -4,7 +4,9 @@
 import hashlib
 from datetime import date
 import bcrypt
+import re
 
+regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
 
 class User(object):
     """A user who will use the dashboard and web application.
@@ -61,6 +63,13 @@ class User(object):
             today = date.today()
             age = today.year - self.dob.year - ((today.month, today.day) < (self.dob.month, self.dob.day))
             return age
+    
+    def valid_email(email):
+        if(re.fullmatch(regex, email)):
+            return True
+ 
+        else:
+            return False
 
     def hash_password(self, password):
         """ Creates a hashed password from the string
@@ -92,3 +101,7 @@ class User(object):
         else:
             return False
 
+kat = User('katherine', 'rose', 'katherine_rose@gmail.com', 'london2021!', date(1998, 9, 5) )
+
+print(kat.calculate_age())
+print(kat.hashed_password)

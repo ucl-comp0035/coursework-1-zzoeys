@@ -2,7 +2,7 @@ from selenium import webdriver
 from axe_selenium_python import Axe
 
 def test_google():
-    driver = webdriver.Chrome()
+    driver = webdriver.Firefox()
     driver.get("https://flask-todo-test.herokuapp.com/register")
     axe = Axe(driver)
     # Inject axe-core javascript into page.
