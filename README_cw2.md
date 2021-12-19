@@ -126,16 +126,11 @@ The resulting ERD is shown below:
 
 | Table | Column name | Key |  Data type | Constraint | Description |
 | :----- | :----- | :----- | :----- | :----- | :----- |
-<tr></tr>
-| user | user_id | PK | Integer | Not null, auto increment | Unique identifer |
+| *user* | user_id | PK | Integer | Not null, auto increment | Unique identifer |
 |  | username |  | Text | Not null |
-<tr></tr>
 |  | name  |  | Text | Not null |
-<tr></tr>
 |  | email  |  | Text | Not null, check with regex that the email is in a valid @ and .com format |
-<tr></tr>
 |  | password  |  | Text | Not null, hashed password |
-<tr></tr>
 |  | is_developer  |  | Integer | Not null, 0 for False or 1 for True |
 
 
