@@ -3,13 +3,13 @@ import user
 from datetime import date
 
 
-@pytest.fixture(scope='module')
+@pytest.fixture(scope='function')
 def normal_user():
     '''Returns a normal user of age 23'''
     normal_user = user.User(first_name = 'katherine', last_name = 'rose', email = 'katherine_rose@gmail.com', password = 'london2021!', dob = date(1998, 9, 5))
     yield normal_user
 
-@pytest.fixture(scope='module')
+@pytest.fixture(scope='function')
 def missing_details():
     '''Returns a user without a last name and dob'''
     missing_details = user.User(first_name = ' ', last_name = 'rose', email = 'katherine_rose@gmail.com', password = 'london2021!', dob = date(1998, 9, 5))
