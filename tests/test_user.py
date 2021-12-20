@@ -30,7 +30,8 @@ def test_for_calcalate_age(normal_user):
 def test_for_calcalate_age_2(edge_case_date):
     assert edge_case_date.calculate_age() == 0
 
-
+def test_for_valid_email(invalid_email): 
+    assert invalid_email.valid_email() == False
 
 
 # python -m pytest -v
