@@ -5,7 +5,7 @@ import pytest
 @pytest.mark.parametrize('user, expected', [
     ('normal_user', 'katherine rose'),
     ('missing_details', TypeError)
-], indirect= ['user'])
+], indirect= ['normal_user', 'missing_details'])
 def test_parametrize_user_full_name(user, expected):
     '''
     GIVEN a normal user (created as a fixture)
