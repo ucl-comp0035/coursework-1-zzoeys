@@ -2,6 +2,7 @@ import pytest
 import user
 from datetime import date
 
+
 @pytest.fixture(scope='module')
 def normal_user():
     '''Returns a normal user of age 23'''
