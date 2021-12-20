@@ -3,9 +3,9 @@ import pytest
 # in a parametrized tests, can you pass a fixture as a value
 # parametrized tests
 @pytest.mark.parametrize('user, expected', [
-    (normal_user, 'katherine rose'),
-    (missing_details, TypeError),
-])
+    ('normal_user', 'katherine rose'),
+    ('missing_details', TypeError)
+], indirect= ['user'])
 def test_parametrize_user_full_name(user, expected):
     '''
     GIVEN a normal user (created as a fixture)
