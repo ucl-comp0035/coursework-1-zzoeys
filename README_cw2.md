@@ -211,7 +211,7 @@ https://www.mitchlacey.com/blog/managing-bugs-in-scrum-and-agile-projects/
 
 ### Tests
 
-<img src = test_results/test_file_structure.png width = '400px'>
+<img src = test_results/test_file_structure.png width = '600px'>
 
 Though it is not necessary to cite official documentation, I thought it would be useful to link the relevant pages as they were heavily consulted. 
 
@@ -224,22 +224,23 @@ Automated web accessibility testing using aXe and selenium is to be performed on
 
 When running `python -m pytest -v tests/test_user.py`:
 
-<img src = test_results/result_test_user.png width = '700px'>
+<img src = test_results/result_test_user.png width = '800px'>
 
 When running `python -m pytest --cov=user tests/test_user.py`:
 
-<img src = test_results/result_test_user_cov.png width = '700px'>
+<img src = test_results/result_test_user_cov.png width = '800px'>
 
 
 #### Code quality
 
-To ensure code quality, standard conventions for Python from PEP8, PEP257 were used
+To ensure code quality, it is important to follow standard conventions for Python, such as those from PEP8 and PEP257. This was checked with the flake8 linter through Github Actions, which found that the code did not adhere to style guides.
 
-The flake8 linter through Github Actions found that the code did not adhere to style guides.
+<img src = test_results/flake8.png width = '800px'>
 
-<img src = test_results/result_test_user_cov.png width = '400px'>
+The Black Python code reformatter[https://pypi.org/project/black/] was used for to ensure that PEP8 conventions were followed for the user.py, data_preparation.py, conftest.py, test_user and test_accessibility files.
 
-The Black  Python code reformatter[https://pypi.org/project/black/] was used for to ensure that PEP 8 conventions were followed for the user.py and data_preparation.py files.
+<img src = test_results/black_1.png width = '800px'>
+<img src = test_results/black_2.png width = '800px'>
 
 ### Continuous integration 
 Consider using GitHub Actions (or other) to establish a continuous integration pipeline. If you do so then please provide a link to the .yml and a screenshot of the results of a workflow run.

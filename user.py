@@ -117,7 +117,12 @@ class User(object):
             return False
 
 
-kate = User(first_name = 'hi', last_name = 'rose', email = 'katherine_rose@gmail.com', password = 'london2021!', dob = date(1998, 9, 5))
+kate = User(
+    first_name="hi",
+    last_name="rose",
+    email="katherine_rose@gmail.com",
+    password="london2021!",
+    dob=date(1998, 9, 5),
+)
 
 print(kate.hashed_password)
-
