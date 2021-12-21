@@ -2,15 +2,12 @@
 
 to do:
 
-user flow
+json user stories
 user stories
 context diagram
 wireframes
 routes
 erd 
-unit tests
-flake8 and black
-ci worth
 
 ## Technical information
 ### Repository URL
@@ -37,7 +34,7 @@ However, due to ethical and time restrictions, brainstorming will be used instea
 
 ### Requirement specification method
 
-Data Driven Scrum (DDS) was chosen as the project methodology to guide the use of sprint planning as DDS is an agile methodology and a core principle of agile development is developing software that is user-focused. Thus, creating user stories was chosen as the method of requirement specification as they keep the product team focused on the value of their software’s features and how they address a particular need of the client (https://www.atlassian.com/agile/project-management/user-stories). User stories articulate the desired purpose of the system and provide the basis for communication and collaboration between the product team about the user’s requirements. User stories are also meant to be easily understood and revised, which is helpful for an inexperienced product team like that of this project.
+Data Driven Scrum (DDS) was chosen as the project methodology to guide the use of sprint planning as DDS is an agile methodology and a core principle of agile development is developing software that is user-focused. Thus, creating user stories was chosen as the method of requirement specification as they keep the product team focused on the value of their software’s features and how they address a particular need of the client (Rehkopf, 2021). User stories articulate the desired purpose of the system and provide the basis for communication and collaboration between the product team about the user’s requirements. User stories are also meant to be easily understood and revised, which is helpful for an inexperienced product team like that of this project.
 
 ### Prioritisation method
 
@@ -47,8 +44,9 @@ The considerations made when prioritising requirements are detailed on the Trell
 
 ### Documented and prioritised requirements
 
-Trello was used, here. Please click the labels at the top of each card to see the name of the labels.
+Trello was used, [here](https://trello.com/b/cjogVnBl/user-stories). Please click the labels at the top of each card to see the name of the labels.
 
+JSON file
 
 ## Design
 
@@ -93,7 +91,7 @@ A class diagram was created for a high level visualisation of the model of the w
 
 A data-driven approach was chosen to identify the classes and their attributes and methods, and the relationships between the classes. This approach was chosen as it utilises analysing the user stories to draw out potential classes. Thus, when the user stories get refined throughout the development process as feedback from external stakeholders is received, it would be easier to detect how the classes would change. As a responsibility-driven approach focuses on identifying all the requirements from the start , it may not suit this project which is involves an inexperienced team so the user stories would change over time.
 
-To create the filtering function as specified in the user stories, the Filter Pattern was chosen as the design function (Tutorials Point, 2021). It involves utilising concrete classes to implement the operations and attributes defined by the interface class. As Python does not have an 'interface' keyword unlike Java, the design pattern can still be applied by utilising different methods of creating a class with similar functions to that of an 'interface' class (Real Python, 2021). 
+To create the filtering function as specified in the user stories, the Filter Pattern was chosen as the design function (tutorialspoint, 2021). It involves utilising concrete classes to implement the operations and attributes defined by the interface class. As Python does not have an 'interface' keyword unlike Java, the design pattern can still be applied by utilising different methods of creating a class with similar functions to that of an 'interface' class (Real Python, 2021). 
 
 Criteria interface and concrete classes implementing this interface to filter list of Person objects.
 
@@ -194,6 +192,7 @@ The resulting ERD is shown below:
 
 ## Testing
 
+Though it is not necessary to cite official documentation and tutorials of python libraries, I thought it would be useful to link the relevant pages as they were heavily consulted. 
 
 
 ### Choice of unit testing library
@@ -202,8 +201,7 @@ Pytest was chosen because it is simpler to use and unlike unittest, doesn't [req
 scalable and simple tests
 [https://www.pythonpool.com/python-unittest-vs-pytest/]
 
-Accessibilty of testing using selenium axe [https://pypi.org/project/axe-selenium-python-dev/]
-The code is in the file test_accessibility, however, it cannot be run as geckodriver has to be installed on Firefox [https://www.guru99.com/gecko-marionette-driver-selenium.html] When the webpage has been launched, this will be added
+Automated web accessibility testing using [aXe and selenium](https://pypi.org/project/axe-selenium-python/) is to be performed once the web app page is running. It cannot currently be performed because there is no url. Once the web page has a url, [geckodriver for Firefox](https://www.guru99.com/gecko-marionette-driver-selenium.html) will also be installed so that the test can run. 
 
 
 Process of checking for bugs in the project development stage
@@ -213,11 +211,11 @@ https://www.mitchlacey.com/blog/managing-bugs-in-scrum-and-agile-projects/
 
 <img src = test_results/test_file_structure.png width = '600px'>
 
-Though it is not necessary to cite official documentation, I thought it would be useful to link the relevant pages as they were heavily consulted. 
 
 Pages in the pytest documentation were referenced to [parametrize the tests](https://docs.pytest.org/en/latest/how-to/parametrize.html), to [pass a fixture as a value in parametrized tests](https://docs.pytest.org/en/latest/example/parametrize.html#indirect-parametrization) and to apply [conditional raising in a parametrized tests](https://docs.pytest.org/en/stable/example/parametrize.html#parametrizing-conditional-raising) so that it can be tested if an error is raised when specific values are passed in a parametrized test.
 
-Automated web accessibility testing using aXe and selenium is to be performed once the web app page is running. It cannot currently be performed because there is no url. Once the web page has a url, [geckodriver for Firefox](https://pypi.org/project/axe-selenium-python/) will also be installed so that the test can run. The file with the code for the accessibility testing is in the tests folder for reference, but when running the test please use the commands `python -m pytest -v tests/test_user.py` and `python -m pytest --cov=user tests/test_user.py` to only run the tests and see the coverage report for the test_user file as the test_accessibility file would result in errors. 
+
+The file with the code for the accessibility testing is in the tests folder for reference, but when running the test please use the commands `python -m pytest -v tests/test_user.py` and `python -m pytest --cov=user tests/test_user.py` to only run the tests and see the coverage report for the test_user file as the test_accessibility file would result in errors. 
 
 
 ### Test results
@@ -243,11 +241,12 @@ The Black Python code reformatter[https://pypi.org/project/black/] was used for 
 <img src = test_results/black_2.png width = '800px'>
 
 ### Continuous integration 
-Consider using GitHub Actions (or other) to establish a continuous integration pipeline. If you do so then please provide a link to the .yml and a screenshot of the results of a workflow run.
+GitHub Actions was used to establish a continuous integration (CI) pipeline, which is especially beneficial for a project team using agile methodologies. Using a CI pipeline increases the efficiency of the software delivery process as it emphasises the automation of key software development processes, such as building, testing and deploying (Subrameyer, 2021). Code can also be tested more frequently which allows developers to detect and fix issues as they arise. As a result, the timing between releases can be reduced to achieve more frequent releases. 
 
-[consider the benefits of using such tools in the development phase of a project]
+The Python Application workflow on Github Actions was added to the project. The link to the .yml file is [here](.github/workflows/python-app.yml) and the results of a successful workflow run are shown below:
 
-As with the Python Application workflow on Github Actions, the flake8 linter was run. 
+<img src = test_results/github_actions_1.png width = '800px'>
+<img src = test_results/github_actions_2.png width = '800px'>
 
 ## References
 
@@ -259,8 +258,12 @@ Kitzinger, J., 1995. ‘Qualitative Research: Introducing focus groups’. BMJ, 
 
 Real Python, 2021. Implementing an interface in Python. Real Python. Available at: https://realpython.com/python-interface/ [Accessed December 19, 2021]. 
 
+Rehkopf, M., 2021. User stories with examples and a template. Atlassian. Available at: https://www.atlassian.com/agile/project-management/user-stories [Accessed December 21, 2021]. 
+
 SQLite, 2021. Datatypes in SQLite. Datatypes In SQLite. Available at: https://www.sqlite.org/datatype3.html [Accessed December 19, 2021]. 
 
 Subotin, S., 2017. Dashboard Design - Considerations and Best Practices. Designers. Available at: https://www.toptal.com/designers/data-visualization/dashboard-design-best-practices [Accessed December 13, 2021]. 
 
-TutorialsPoint https://www.tutorialspoint.com/design_pattern/filter_pattern.htm 
+Subrameyer, R., 2021. 5 benefits of implementing a CI/CD pipeline. Ranorex. Available at: https://www.ranorex.com/blog/5-benefits-ci-cd-pipeline/ [Accessed December 21, 2021]. 
+
+tutorialspoint, 2021. Design Patterns - Filter Pattern. Available at: https://www.tutorialspoint.com/design_pattern/filter_pattern.htm [Accessed December 15, 2021]. 

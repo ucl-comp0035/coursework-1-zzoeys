@@ -79,6 +79,7 @@ class User(object):
             )
             return age
 
+    #  Adapted from code written by GeeksforGeeks at https://www.geeksforgeeks.org/check-if-email-address-valid-or-not-in-python/ Accessed 20/12/2021
     def valid_email(self):
         if re.fullmatch(regex, self.email):
             return True
@@ -115,14 +116,3 @@ class User(object):
             return True
         else:
             return False
-
-
-kate = User(
-    first_name="hi",
-    last_name="rose",
-    email="katherine_rose@gmail.com",
-    password="london2021!",
-    dob=date(1998, 9, 5),
-)
-
-print(kate.hashed_password)
