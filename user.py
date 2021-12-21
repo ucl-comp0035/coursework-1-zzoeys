@@ -6,7 +6,8 @@ from datetime import date
 import bcrypt
 import re
 
-regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+regex = r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b"
+
 
 class User(object):
     """A user who will use the dashboard and web application.
@@ -32,7 +33,14 @@ class User(object):
         is_correct_password: Checks if the string password matches the hashed password
     """
 
-    def __init__(self, first_name: str, last_name: str, email: str, password: str, dob: date = None):
+    def __init__(
+        self,
+        first_name: str,
+        last_name: str,
+        email: str,
+        password: str,
+        dob: date = None,
+    ):
         self.first_name = first_name
         self.last_name = last_name
         self.email = email
@@ -40,7 +48,7 @@ class User(object):
         self.dob = dob
 
     def __repr__(self):
-        """ String representation of a user object """
+        """String representation of a user object"""
         return f" {self.first_name} {self.last_name} {self.email} {self.dob}"
 
     def create_full_name(self):
@@ -49,7 +57,10 @@ class User(object):
         Returns:
             Returns the full name
         """
-        return f'{self.first_name} {self.last_name}'
+        if self.first_name is None:
+            raise TypeError
+
+        return f"{self.first_name} {self.last_name}"
 
     def calculate_age(self):
         """Calculates age based on the current date and the date of birth
@@ -61,18 +72,22 @@ class User(object):
             return "Age not calculated, date of birth unknown"
         else:
             today = date.today()
-            age = today.year - self.dob.year - ((today.month, today.day) < (self.dob.month, self.dob.day))
+            age = (
+                today.year
+                - self.dob.year
+                - ((today.month, today.day) < (self.dob.month, self.dob.day))
+            )
             return age
-    
-    def valid_email(email):
-        if(re.fullmatch(regex, email)):
+
+    def valid_email(self):
+        if re.fullmatch(regex, self.email):
             return True
- 
+
         else:
             return False
 
     def hash_password(self, password):
-        """ Creates a hashed password from the string
+        """Creates a hashed password from the string
 
         The bcrypt.hashpw() function takes a byte encoded arg, the password string therefore needs to be encoded.
 
@@ -82,11 +97,11 @@ class User(object):
             None
         """
         salt = bcrypt.gensalt()
-        self.hashed_password = bcrypt.hashpw(password.encode('utf8'), salt)
+        self.hashed_password = bcrypt.hashpw(password.encode("utf8"), salt)
         return self.hashed_password
 
     def is_correct_password(self, password):
-        """ Checks whether the provided password string matches the hashed password
+        """Checks whether the provided password string matches the hashed password
 
         The bcrypt.checkpw() function takes byte encoded args, the password string needs to be encoded.
 
@@ -96,12 +111,13 @@ class User(object):
         Returns:
             bool : True if there is a match and False if not
         """
-        if bcrypt.checkpw(password.encode('utf-8'), self.hashed_password):
+        if bcrypt.checkpw(password.encode("utf-8"), self.hashed_password):
             return True
         else:
             return False
 
-kat = User('katherine', 'rose', 'katherine_rose@gmail.com', 'london2021!', date(1998, 9, 5) )
 
-print(kat.calculate_age())
-print(kat.hashed_password)
+kate = User(first_name = 'hi', last_name = 'rose', email = 'katherine_rose@gmail.com', password = 'london2021!', dob = date(1998, 9, 5))
+
+print(kate.hashed_password)
+

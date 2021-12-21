@@ -2,14 +2,12 @@
 
 to do:
 
-prioritisation
 user flow
 user stories
 context diagram
 wireframes
 routes
 erd 
-erd table
 unit tests
 flake8 and black
 ci worth
@@ -213,22 +211,39 @@ https://www.mitchlacey.com/blog/managing-bugs-in-scrum-and-agile-projects/
 
 ### Tests
 
-[test folder showcase thing with explanations on what each file does]
+tests/
+├── __init__.py
+├── conftest.py
+├── test_accessibility.py (performs accessibility testing)
+└── test_user.py (tests the User class)
 
-User acceptance testing
+Though it is not necessary to cite official documentation, I thought it would be useful to link the relevant pages as they were heavily consulted. 
+
+Pages in the pytest documentation were referenced to [parametrize the tests](https://docs.pytest.org/en/latest/how-to/parametrize.html), to [pass a fixture as a value in parametrized tests](https://docs.pytest.org/en/latest/example/parametrize.html#indirect-parametrization) and to apply [conditional raising in a parametrized tests](https://docs.pytest.org/en/stable/example/parametrize.html#parametrizing-conditional-raising) so that it can be tested in an error is raised when for specific values passed in a parametrized test.
+
+Automated web accessibility testing using aXe and selenium is to be performed once the web app page is running. It cannot currently be performed because there is no url. Once the web page has a url, [geckodriver for Firefox](https://pypi.org/project/axe-selenium-python/) will also be installed so that the test can run. The file with the code for the accessibility testing is in the tests folder for reference, but when running the test please use the commands `python -m pytest -v tests/test_user.py` and `python -m pytest --cov=user tests/test_user.py` to only run the tests and see the coverage report for the test_user file as the test_accessibility file would result in errors. 
 
 
 ### Test results
-Provide evidence that the tests have been run and the results of the tests (e.g. screenshot).
+
+When running `python -m pytest -v tests/test_user.py`:
+
+<img src = test_results/result_test_user.png width = '400px'>
+
+When running `python -m pytest --cov=user tests/test_user.py`:
+
+<img src = test_results/result_test_user_cov.png width = '400px'>
+
 
 #### Code quality
 
 To ensure code quality, standard conventions for Python from PEP8, PEP257 were used
 
+The flake8 linter through Github Actions found that the code did not adhere to style guides.
 
-[what did the linting tell you]
+<img src = test_results/result_test_user_cov.png width = '400px'>
 
-black?
+The Black  Python code reformatter[https://pypi.org/project/black/] was used for to ensure that PEP 8 conventions were followed for the user.py and data_preparation.py files.
 
 ### Continuous integration 
 Consider using GitHub Actions (or other) to establish a continuous integration pipeline. If you do so then please provide a link to the .yml and a screenshot of the results of a workflow run.

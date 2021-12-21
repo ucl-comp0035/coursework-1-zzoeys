@@ -1,39 +1,60 @@
+from contextlib import contextmanager
 import pytest
 
-# in a parametrized tests, can you pass a fixture as a value
-# parametrized tests
-@pytest.mark.parametrize('user, expected', [
-    ('normal_user', 'katherine rose'),
-    ('missing_details', TypeError)
-], indirect= ['normal_user', 'missing_details'])
-def test_parametrize_user_full_name(user, expected):
+@contextmanager
+def does_not_raise():
+    yield
+
+# Parametrized test for giving the user's full name
+@pytest.mark.parametrize('users, expected, expectation', [('normal_user', 'katherine rose', does_not_raise()),
+                        ('missing_details', None, pytest.raises(TypeError))],
+                        indirect=['users'])
+def test_parametrize_full_name(users, expected, expectation):
     '''
     GIVEN a normal user (created as a fixture)
     WHEN creating the user's full name
     THEN the user's first and last name should be shown
+
+    GIVEN a user with a missing first name (created as a fixture)
+    WHEN creating the user's full name
+    THEN a TypeError is given
     '''
-    assert user.create_full_name(user) == expected
+    with expectation:
+        assert users.create_full_name() == expected
 
-
-# unparametrised tests
-def test_for_user_full_name(normal_user):
+# Parametrized test for giving the user's age
+@pytest.mark.parametrize('users, expected', [('normal_user', 23),
+                                            ('edge_case_dob', 0),
+                                            ('no_dob', 'Age not calculated, date of birth unknown')],
+                         indirect=['users'])
+def test_parametrize_calcalate_age(users, expected):
     '''
     GIVEN a normal user (created as a fixture)
-    WHEN creating the user's full name
+    WHEN calculating the user's age
     THEN the user's first and last name should be shown
+
+    GIVEN a user with a birth date of totday (created as a fixture)
+    WHEN calculating the user's age
+    THEN the age should correctly be shown as 0
+
+    GIVEN a user who didn't input a birthday (created as a fixture)
+    WHEN calculating the user's age
+    THEN a message should be printed saying 'Age not calculated, date of birth unknown'
     '''
-    assert normal_user.create_full_name() == 'katherine rose'
+    assert users.calculate_age() == expected
 
-def test_for_calcalate_age(normal_user):
-    assert normal_user.calculate_age() == 23
+# Parametrized test for checking if a user's email is valid
+@pytest.mark.parametrize('users, expected', [('normal_user', True), ('invalid_email', False)],
+                         indirect=['users'])
+def test_parametrize_check_email(users, expected):
+    '''
+    GIVEN a normal user (created as a fixture)
+    WHEN checking if their email is valid
+    THEN the function should return True
 
-def test_for_calcalate_age_2(edge_case_date):
-    assert edge_case_date.calculate_age() == 0
+    GIVEN a user who has input a email not in the correct format (created as a fixture)
+    WHEN checking if their email is valid
+    THEN the function should return False
+    '''
+    assert users.valid_email() == expected
 
-def test_for_valid_email(invalid_email): 
-    assert invalid_email.valid_email() == False
-
-
-# python -m pytest -v
-# pytest --cov=.
-# python -m pytest --cov-report term-missing --cov=user tests/
