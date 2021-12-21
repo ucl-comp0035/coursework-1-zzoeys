@@ -62,7 +62,7 @@ A dashboard for the data visualisations was chosen to be created as it is an acc
 
 To get a high-level model of the basic flow of the user, a user flow was created.
 
-<img src = diagrams/design/user_flow.png width = '400px'>
+<img src = diagrams/design/user_flow.png width = '700px'>
 
 
 #### Detailed use cases
@@ -211,15 +211,11 @@ https://www.mitchlacey.com/blog/managing-bugs-in-scrum-and-agile-projects/
 
 ### Tests
 
-tests/
-├── __init__.py
-├── conftest.py
-├── test_accessibility.py (performs accessibility testing)
-└── test_user.py (tests the User class)
+<img src = test_results/test_file_structure.png width = '400px'>
 
 Though it is not necessary to cite official documentation, I thought it would be useful to link the relevant pages as they were heavily consulted. 
 
-Pages in the pytest documentation were referenced to [parametrize the tests](https://docs.pytest.org/en/latest/how-to/parametrize.html), to [pass a fixture as a value in parametrized tests](https://docs.pytest.org/en/latest/example/parametrize.html#indirect-parametrization) and to apply [conditional raising in a parametrized tests](https://docs.pytest.org/en/stable/example/parametrize.html#parametrizing-conditional-raising) so that it can be tested in an error is raised when for specific values passed in a parametrized test.
+Pages in the pytest documentation were referenced to [parametrize the tests](https://docs.pytest.org/en/latest/how-to/parametrize.html), to [pass a fixture as a value in parametrized tests](https://docs.pytest.org/en/latest/example/parametrize.html#indirect-parametrization) and to apply [conditional raising in a parametrized tests](https://docs.pytest.org/en/stable/example/parametrize.html#parametrizing-conditional-raising) so that it can be tested if an error is raised when specific values are passed in a parametrized test.
 
 Automated web accessibility testing using aXe and selenium is to be performed once the web app page is running. It cannot currently be performed because there is no url. Once the web page has a url, [geckodriver for Firefox](https://pypi.org/project/axe-selenium-python/) will also be installed so that the test can run. The file with the code for the accessibility testing is in the tests folder for reference, but when running the test please use the commands `python -m pytest -v tests/test_user.py` and `python -m pytest --cov=user tests/test_user.py` to only run the tests and see the coverage report for the test_user file as the test_accessibility file would result in errors. 
 
@@ -228,11 +224,11 @@ Automated web accessibility testing using aXe and selenium is to be performed on
 
 When running `python -m pytest -v tests/test_user.py`:
 
-<img src = test_results/result_test_user.png width = '400px'>
+<img src = test_results/result_test_user.png width = '700px'>
 
 When running `python -m pytest --cov=user tests/test_user.py`:
 
-<img src = test_results/result_test_user_cov.png width = '400px'>
+<img src = test_results/result_test_user_cov.png width = '700px'>
 
 
 #### Code quality
