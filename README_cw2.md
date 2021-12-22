@@ -81,27 +81,27 @@ Lucidchart was used to create the wireframes for the web app. As the user of the
 
 **User or developer logs in or signs up**
 <img src = wireframes/wireframe_1.png width = '1000px'>
-
+<br>
 <br>
 
 **User saves a filter**
 <img src = wireframes/wireframe_2.png width = '1000px'>
-
+<br>
 <br>
 
 **User uses the forum**
 <img src = wireframes/wireframe_3.png width = '1000px'>
-
+<br>
 <br>
 
 **User reads a news articles**
 <img src = wireframes/wireframe_4.png width = '1000px'>
-
+<br>
 <br>
 
 **User goes to the settings page**
 <img src = wireframes/wireframe_5.png width = '1000px'>
-
+<br>
 <br>
 
 
@@ -113,8 +113,7 @@ Lucidchart was used to create the wireframes for the web app. As the user of the
 | :----- | :----- | :----- |
 | /login | 1.1 | login() Checks the entered account info against the details in the database, returns an error if details are incorrect, otherwise redirects users to the main page. |
 | /signup | 1.1.1 | signup() Checks the entered email against the whitelisted emails in the database, returns an error if the email is not present, otherwise stores the login details in the database and redirects users to the main page. |
-| /main | 1.2 and 1.2.1 | index() Renders the home page with the user's first saved visualisation. filter() Renders the visualisations according to the saved filter chosen by the user. sidebar() Shows the full names of the headers when the user hovers over the sidebar |
-enlarge() Shows the visualisation that the user clicks on in a larger pop-up.
+| /main | 1.2 and 1.2.1 | index() Renders the home page with the user's first saved visualisation. filter() Renders the visualisations according to the saved filter chosen by the user. sidebar() Shows the full names of the headers when the user hovers over the sidebar. |
 | /main/enlarge | 1.2.2 | enlarge() Shows the visualisation that the user clicks on in a larger pop-up. |
 | /whitelist | 1.3 | whitelist() Whitelists a user's email by adding their email to the database of whitelisted emails and refreshes the whitelist page showing the newly whitelisted email at the bottom. |
 | /visualisation | 2.1 | get_dash() Calls the Dash dashboard app to render the visualisations. |
@@ -153,7 +152,7 @@ A table to store the whitelisted emails added by developers was created without 
 
 The resulting ERD is shown below:
 
-<img src = diagrams/ERDs/ERD.png width = '400px'>
+<img src = diagrams/ERDs/ERD.png width = '1000px'>
 
 
 #### Data dictionary
@@ -161,7 +160,7 @@ The resulting ERD is shown below:
 | Table | Column name | Key |  Data type | Constraint | Description |
 | :----- | :----- | :----- | :----- | :----- | :----- |
 | user | user_id | PK | Integer | Not null, auto increment | Unique identifer for users |
-| user | username |  | Text | Not null | The unique username of the user which is used for logging in and displayed on the profile |
+| user | username |  | Text | Not null | The unique username of the user which is used for logging in and is displayed on their profile |
 | user | name |  | Text | Can be null (like when the user has just signed up and hasn't input their name) | User's name, can be first name, last name or full name |
 | user | email  |  | Text | Not null, check with regex that the email is in a valid @ and .com format | User's email that was used to sign up | 
 | user | password  |  | Text | Not null | Hashed password |
@@ -172,11 +171,11 @@ The resulting ERD is shown below:
 | forum_post | body |  | Text | Not null | Body text of the forum post |
 | forum_post | date_published |  | Text | Not null, stored as text as ISO8601 strings | Date the post was published |
 | forum_comment | forum_comment_id | PK | Integer | Not null, auto increment | Unique identifer for forum comments |
-| forum_comment | forum_post_id | FK | Integer | Not null | The forum post id of the post that the comment belongs too |
+| forum_comment | forum_post_id | FK | Integer | Not null | The forum post id of the post that the comment belongs to |
 | forum_comment | user_id | FK | Integer | Not null | The user id of the writer of the forum comment |
-| forum_post | body |  | Text | Not null | Body text of the forum comment |
+| forum_comment | body |  | Text | Not null | Body text of the forum comment |
 | saved_filter | filter_id | PK | Integer | Not null, auto increment | Unique identifer for saved filters |
-| saved_filter | saved_filter_name |  | Text | Not null | Name given by user for the saved filter |
+| saved_filter | saved_filter_name |  | Text | Not null | Name given by the user for the saved filter |
 | saved_filter | user_id | FK | Integer | Not null | The user id of the user that created the saved filter |
 | filter_borough | filter_id | FK | Integer | Not null | The filter id of the filter that contains the borough |
 | filter_borough | borough_id | FK | Integer | Not null | The borough id of the  borough that is included in the filter |
@@ -186,14 +185,14 @@ The resulting ERD is shown below:
 | filter_year | filter_id | FK | Integer | Not null | The filter id of the filter that contains the year |
 | filter_year | year |  | Integer | Not null, YYYY format | The year that is included in the filter |
 | whitelisted_email | whitelisted_id | PK | Integer | Not null, auto increment | Unique identifer for the whitelisted email |
-| whitelisted_email | whitelisted_email |  | Email | Not null, check with regex that the email is in a valid @ and .com format | User's email that has been whitelisted | 
+| whitelisted_email | whitelist_email |  | Text | Not null, check with regex that the email is in a valid @ and .com format | User's email that has been whitelisted | 
 
 
 ## Testing
 
-Though it is not necessary to cite official documentation and tutorials of python libraries, I thought it would be useful to link the relevant pages of material not covered in the course material as they were heavily consulted. 
+Though it is not necessary to cite official documentation and tutorials of python libraries, I thought it would be useful to link the relevant pages of material not covered in the course as they were heavily consulted. 
 
-The software development team of this project team will utilise a real-time bug fixing approach where bugs are fixed as they are found. This way, the consequential damage caused by the bug can be limited and provides team members with a learning opportunity to write better code (Lacey, 2016). 
+The software development team of this project team will utilise a real-time bug fixing approach where bugs are fixed as they are found. This way, the consequential damage caused by the bug can be limited and team members would be provided with a learning opportunity to write better code (Lacey, 2016). 
 
 
 ### Choice of unit testing library
@@ -231,13 +230,13 @@ To ensure code quality, it is important to follow standard conventions for Pytho
 
 <img src = test_results/flake8.png width = '800px'>
 
-The Black Python code reformatter[https://pypi.org/project/black/] was used for to ensure that PEP8 conventions were followed in the user.py, data_preparation.py, conftest.py, test_user and test_accessibility files.
+The (Black Python code reformatter)[https://pypi.org/project/black/] was used for to ensure that PEP8 conventions were followed in the user.py, data_preparation.py, conftest.py, test_user and test_accessibility files.
 
 <img src = test_results/black_1.png width = '800px'>
 <img src = test_results/black_2.png width = '800px'>
 
 ### Continuous integration 
-GitHub Actions was used to establish a continuous integration (CI) pipeline, which is especially beneficial for a project team using agile methodologies. Using a CI pipeline increases the efficiency of the software delivery process as it emphasises the automation of key software development processes, such as building, testing and deploying (Subrameyer, 2021). Code can also be tested more frequently which allows developers to detect and fix issues as they arise. As a result, the timing between releases can be reduced to achieve more frequent releases. 
+GitHub Actions was used to establish a continuous integration (CI) pipeline, which is especially beneficial for a project team using agile methodologies. Using a CI pipeline increases the efficiency of the software delivery process as it aids the automation of key software development processes, such as building, testing and deploying (Subrameyer, 2021). Code can also be tested more frequently which allows developers to detect and fix issues as they arise. As a result, the timing between releases can be reduced to achieve more frequent releases. 
 
 The Python Application workflow on Github Actions was added to the project. The link to the .yml file is [here](.github/workflows/python-app.yml) and the results of a successful workflow run are shown below:
 
