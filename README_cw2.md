@@ -1,14 +1,5 @@
 # Coursework 2
 
-to do:
-
-json user stories
-user stories
-context diagram
-wireframes
-routes
-erd 
-
 ## Technical information
 ### Repository URL
 [Repository](https://github.com/ucl-comp0035/coursework-1-zzoeys.git)
@@ -46,7 +37,7 @@ The considerations made when prioritising requirements are detailed on the Trell
 
 Trello was used, [here](https://trello.com/b/cjogVnBl/user-stories). Please click the labels at the top of each card to see the name of the labels.
 
-JSON file
+The user stories are also documented as a csv file [here](user_stories/user_stories.csv).
 
 ## Design
 
