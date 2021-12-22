@@ -142,7 +142,7 @@ To model the database with the saved filters, instead of storing the list of bor
 
 <img src = diagrams/ERDs/ERD_saved_filter.png width = '400px'>
 
-In the process of second normalisation to 2nd Normal Form (2NF), the table borough_name was created so that the attribute borough_name is only dependent on borough_id and not the combination of filter_id and borough_id. It also avoids duplication of data as it prevents having to store the borough name every time a borough is linked to a filter. The resulting tables have no transitive functional dependencies, so the requirements for 3rd Normal Form (3NF) are satisfied. 
+In the process of second normalisation to 2nd Normal Form (2NF), the table borough_name was created as the attribute borough_name is only dependent on borough_id and not the combination of filter_id and borough_id which make up the composite primary key. It also avoids duplication of data as it prevents having to store the borough name every time a borough is linked to a filter. The resulting tables have no transitive functional dependencies, so the requirements for 3rd Normal Form (3NF) are satisfied as shown in the resulting ERD at the bottom. 
 
 To model the databases for forum posts and forum comments, referential integrity, where each foreign key references an existing primary key in the parent table (Database.Guide, 2016), is ensured. These tables also satisfy the requirements for 1NF, 2NF and 3NF as shown below:
 
