@@ -17,11 +17,11 @@ Firstly, a context diagram is built to gain insight into interface requirements.
 
 Ideally, a focus group would also be conducted with aspiring business owners to learn about their requirements for the web application. During a focus group, participants can build on the responses of others and comment on any differing opinions. This makes focus groups useful for understanding a collective view (Kitzinger, 1995) and would allow the product team to gain an understanding of the aspiring business owners’ needs and how the proposed web application can best support these needs. 
 
-However, due to ethical and time restrictions, brainstorming will be used instead of focus groups. The context diagram will guide the process of brainstorming so that requirements of all users of the system can be identified. User stories are also added and refined as the design process is carried out, such as when more detail was added to the acceptance criteria after drawing the wireframe. For example, the acceptance criteria for a separate view to enlarge the data on the dashboard was added as design research was conducted to specify the wireframe for the dashboard. 
+However, due to ethical and time restrictions, brainstorming will be used instead of focus groups. The context diagram will guide the process of brainstorming so that requirements of all users of the system can be identified. User stories are also added and refined as the design process is carried out, such as when more detail was added to the acceptance criteria after drawing the wireframe. For example, the acceptance criteria for a separate view to enlarge the data on the dashboard was added when design research was conducted to specify the wireframe for the dashboard. 
 
 ### Context diagram
 
-<img src = diagrams/design/context_flow.png width = '800px'>
+<img src = diagrams/design/context_flow.png width = '1000px'>
 
 ### Requirement specification method
 
@@ -29,13 +29,13 @@ Data Driven Scrum (DDS) was chosen as the project methodology to guide the use o
 
 ### Prioritisation method
 
-The MoSCoW prioritisation method was chosen as it complements the use of user stories and agile projects (Agile Business, 2021). Though it is simple, it is provides enough detail about 'Must Have', 'Should Have', 'Could Have' and 'Won't Have this time' requirements that help project teams set and manage priorities.
+The MoSCoW prioritisation method was chosen as it complements the use of user stories and agile projects (Agile Business, 2021). Though it is simple, it provides enough detail about 'Must Have', 'Should Have', 'Could Have' and 'Won't Have this time' requirements that help project teams set and manage priorities.
 
 The considerations made when prioritising requirements are detailed on the Trello page linked below. They are labelled with the purple label named 'Prioritisation Considerations'. 
 
 ### Documented and prioritised requirements
 
-Trello was used, [here](https://trello.com/b/cjogVnBl/user-stories). Please click the labels at the top of each card to see the name of the labels.
+Trello was used, [here](https://trello.com/b/cjogVnBl/user-stories), to document user stories. Please click the labels at the top of each card to see the name of the labels.
 
 The user stories are also documented as a PDF file [here](user_stories/user_stories.pdf).
 
@@ -45,7 +45,7 @@ The user stories are also documented as a PDF file [here](user_stories/user_stor
 
 A dashboard for the data visualisations will be created as it is an accessible way of visually consolidating the most relevant information for a user to view (Subotin, 2017). To improve usability, it is important for the dashboard to include filters that enable users to customize what data is displayed. It is also important for the data to be displayed in a minimized view, but with a feature that allows users to show more details in a separate view. These features were thus added as acceptance criteria in the user stories.
 
-As Flask will be used to create the web app, the routes and controllers (in the form of a table), models (in the form of a class diagram) and views (in the form of wireframes) will be 
+As Flask will be used to create the web app, the routes and controllers (in the form of a table), models (in the form of a class diagram) and views (in the form of wireframes) will be detailed. 
 
 ### Structure and flow of the interface
 
@@ -73,26 +73,36 @@ Despite trying to ensure low coupling, it was necessary to have the forum_commen
 
 The resulting class diagram is shown below:
 
-<img src = diagrams/design/class_diagram.png width = '400px'>
+<img src = diagrams/design/class_diagram.png width = '1000px'>
 
 #### Wireframes
 
 Lucidchart was used to create the wireframes for the web app. As the user of the web app would tend to use their laptops to access the app instead of other devices like their mobile phone, the sketch would assume the user is accessing the web app on their laptop.
 
 **User or developer logs in or signs up**
-<img src = wireframes/wireframe_1.png width = '800px'>
+<img src = wireframes/wireframe_1.png width = '1000px'>
+
+<br>
 
 **User saves a filter**
-<img src = wireframes/wireframe_2.png width = '800px'>
+<img src = wireframes/wireframe_2.png width = '1000px'>
+
+<br>
 
 **User uses the forum**
-<img src = wireframes/wireframe_3.png width = '800px'>
+<img src = wireframes/wireframe_3.png width = '1000px'>
+
+<br>
 
 **User reads a news articles**
-<img src = wireframes/wireframe_4.png width = '800px'>
+<img src = wireframes/wireframe_4.png width = '1000px'>
+
+<br>
 
 **User goes to the settings page**
-<img src = wireframes/wireframe_5.png width = '800px'>
+<img src = wireframes/wireframe_5.png width = '1000px'>
+
+<br>
 
 
 #### Routes
