@@ -69,7 +69,7 @@ A class diagram was created for a high level visualisation of the model of the w
 
 To create the filter method as specified in the user stories for filtering the data in the visualisations, the Filter Pattern was chosen as the design pattern (tutorialspoint, 2021). It involves utilising concrete classes to implement the operations and attributes defined by the interface class, and these classes have a realisation relationship. This way, the implementation of the filter method is handled by the classes that use it and filters can be saved as saved filters. Though Python does not have an 'interface' keyword like in Java, the design pattern can still be applied by utilising different methods of creating a class with similar functions to that of an 'interface' class (Real Python, 2021). 
 
-Despite trying to ensure low coupling, it was necessary to have the forum_comment, forum_post and user class to all be linked to each other. These classes are dependent on each other, for example, if a user's name is changed, the forum posts and comments can reflect those changes.
+Despite trying to ensure low coupling, it was necessary to have the forum_comment, forum_post and user class to all be linked to each other. These classes are dependent on each other, for example, if a user's name is changed, the forum posts and comments should reflect those changes.
 
 The resulting class diagram is shown below:
 
@@ -125,9 +125,9 @@ Lucidchart was used to create the wireframes for the web app. As the user of the
 | /forum/<forum_post_id> (other user's post)| 3.3 | comment() When a user clicks on the 'Comment' button, shows a pop-up where the users can comment on the post. |
 | /forum/<forum_post_id>/comment | 3.4 | submit() When a user clicks on the 'Submit' button after writing their comment, adds the details of the comment to the database, redirects users to the post page and renders the new comment on the post page. |
 | /forum/create_new | 3.5 | post() When a user clicks on the 'Post' button after writing their post, adds the details of the post to the database, redirects users to the forum page and renders the new post on the forum page. |
-| /news | 4.1 | get_news() Calls the third party news API to show news articles related to business news in London |
+| /news | 4.1 | get_news() Calls the third party news API to show news articles related to business news in London. |
 | /news/<article_id> | 4.1.1 | read() When the user clicks on a news article, shows a pop-up with the full contents of the article. |
-| /settings | 5.1 | display_settings() Returns the user settings page with data for that user |
+| /settings | 5.1 | display_settings() Returns the user's settings page with data for that user. |
 
 
 ### Relational database design
@@ -184,7 +184,7 @@ The resulting ERD is shown below:
 | filter_year | filter_id_year | PK | Integer | Not null, auto increment | Unique identifer for the combination of the filter id and year that is included in the filter |
 | filter_year | filter_id | FK | Integer | Not null | The filter id of the filter that contains the year |
 | filter_year | year |  | Integer | Not null, YYYY format | The year that is included in the filter |
-| whitelisted_email | whitelisted_id | PK | Integer | Not null, auto increment | Unique identifer for the whitelisted email |
+| whitelisted_email | whitelist_id | PK | Integer | Not null, auto increment | Unique identifer for the whitelisted email |
 | whitelisted_email | whitelist_email |  | Text | Not null, check with regex that the email is in a valid @ and .com format | User's email that has been whitelisted | 
 
 
