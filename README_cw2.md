@@ -230,7 +230,7 @@ To ensure code quality, it is important to follow standard conventions for Pytho
 
 <img src = test_results/flake8.png width = '800px'>
 
-The (Black Python code reformatter)[https://pypi.org/project/black/] was used for to ensure that PEP8 conventions were followed in the user.py, data_preparation.py, conftest.py, test_user and test_accessibility files.
+The [Black Python code reformatter](https://pypi.org/project/black/) was used for to ensure that PEP8 conventions were followed in the user.py, data_preparation.py, conftest.py, test_user and test_accessibility files.
 
 <img src = test_results/black_1.png width = '800px'>
 <img src = test_results/black_2.png width = '800px'>
