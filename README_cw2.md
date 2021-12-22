@@ -37,7 +37,7 @@ The considerations made when prioritising requirements are detailed on the Trell
 
 Trello was used, [here](https://trello.com/b/cjogVnBl/user-stories). Please click the labels at the top of each card to see the name of the labels.
 
-The user stories are also documented as a csv file [here](user_stories/user_stories.csv).
+The user stories are also documented as a PDF file [here](user_stories/user_stories.pdf).
 
 ## Design
 
