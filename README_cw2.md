@@ -140,19 +140,19 @@ SQLite, the database to be used, doesn't allow data to be stored as a date-time 
 
 To model the database with the saved filters, instead of storing the list of boroughs and years in the saved filter as a list as modelled in the class diagram, first normalisation was performed. Storing these details as a list would mean that a table cell would have one or more values which violates the requirements for 1st Normal Form (1NF). To avoid this, two tables were created linking the filter_id of the filter to the years and borough_id's of the boroughs that are in the filter. The tables, named filter_borough and filter_year, would also solve the many-to-many relationship between saved filters, boroughs and years: one filter can have many boroughs and years and one borough/year can belong to multiple filters. The resulting ERD is below:
 
-<img src = diagrams/ERDs/ERD_saved_filter.png width = '600px'>
+<img src = diagrams/ERDs/ERD_saved_filter.png width = '400px'>
 
 In the process of second normalisation to 2nd Normal Form (2NF), the table borough_name was created so that the attribute borough_name is only dependent on borough_id and not the combination of filter_id and borough_id. It also avoids duplication of data as it prevents having to store the borough name every time a borough is linked to a filter. The resulting tables have no transitive functional dependencies, so the requirements for 3rd Normal Form (3NF) are satisfied. 
 
 To model the databases for forum posts and forum comments, referential integrity, where each foreign key references an existing primary key in the parent table (Database.Guide, 2016), is ensured. These tables also satisfy the requirements for 1NF, 2NF and 3NF as shown below:
 
-<img src = diagrams/ERDs/ERD_forum.png width = '600px'>
+<img src = diagrams/ERDs/ERD_forum.png width = '400px'>
 
 A table to store the whitelisted emails added by developers was created without any relationships with other tables. This is because the table with whitelisted emails only serves one purpose to check whether new users are authenticated by checking their emails against the list of whitelisted emails. Only once the users have signed up successfully are their details added to the user database table. As the table of whitelisted emails is still necessary to model the whole process of a user's journey while using the web app despite it having no relationships to other tables, it is still appropriate to have it.
 
 The resulting ERD is shown below:
 
-<img src = diagrams/ERDs/ERD.png width = '1000px'>
+<img src = diagrams/ERDs/ERD.png width = '800px'>
 
 
 #### Data dictionary
