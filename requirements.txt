@@ -7,3 +7,4 @@ selenium
 axe-selenium-python
 pytest
 pytest-cov
+black
