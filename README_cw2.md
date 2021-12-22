@@ -157,7 +157,7 @@ The resulting ERD is shown below:
 
 #### Data dictionary
 
-| Table | Column name | Key |  Data type | Constraint | Description |
+| Table | Column name | Key |  Data type | Constraints | Description |
 | :----- | :----- | :----- | :----- | :----- | :----- |
 | user | user_id | PK | Integer | Not null, auto increment | Unique identifer for users |
 | user | username |  | Text | Not null | The unique username of the user which is used for logging in and is displayed on their profile |
