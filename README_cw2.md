@@ -30,7 +30,7 @@ However, due to ethical and time restrictions, brainstorming will be used instea
 
 ### Context diagram
 
-<img src =  width = '400px'>
+<img src = diagrams/design/context_flow.png width = '800px'>
 
 ### Requirement specification method
 
@@ -52,105 +52,103 @@ JSON file
 
 ### Design Research for Application Design
 
-A dashboard for the data visualisations was chosen to be created as it is an accessible way of visually consolidating the most relevant information for a user to view (Subotin, 2017). To improve usability, it is important for the dashboard to include filters that enable users to customize what data is displayed. It is also important for the data to be displayed in a minimized view, but with a feature that allows users to show more details in a separate view. These features were thus added as acceptance criteria in the user stories.
+A dashboard for the data visualisations will be created as it is an accessible way of visually consolidating the most relevant information for a user to view (Subotin, 2017). To improve usability, it is important for the dashboard to include filters that enable users to customize what data is displayed. It is also important for the data to be displayed in a minimized view, but with a feature that allows users to show more details in a separate view. These features were thus added as acceptance criteria in the user stories.
+
+As Flask will be used to create the web app, the routes and controllers (in the form of a table), models (in the form of a class diagram) and views (in the form of wireframes) will be 
 
 ### Structure and flow of the interface
 
 #### User flows
 
-To get a high-level model of the basic flow of the user, a user flow was created.
+To get a high-level model of the basic flow of a potential business owner using the site, a user flow was created.
 
 <img src = diagrams/design/user_flow.png width = '700px'>
 
 
 #### Detailed use cases
 
-To guide the creation of the wireframes, a detailed use case was created for the process of a user signing up. The creation of a use case was guided by the acceptance criteria of the user stories, but helps to elicit more detailed acceptance criteria. For example, the feature of a developer being able to whitelist a user's emails so that only the project's clients could sign up on the site was added while drawing up the use case.
+To guide the creation of the wireframes, a detailed use case was created for the process of a user signing up to the site as it is a complicated process. The creation of a use case was guided by the acceptance criteria of the user stories, but also helped to elicit more detailed acceptance criteria. For example, the feature of a developer being able to whitelist a user's emails so that only the project's clients could sign up on the site was added while drawing up the use case.
 
-<img src =  width = '400px'>
+<img src = diagrams/design/use_case.png width = '800px'>
+
+
+#### Class diagram
+
+A class diagram was created for a high level visualisation of the model of the web application. A data-driven approach was chosen to identify the classes and their attributes and methods, and the relationships between the classes. This approach was chosen as it utilises analysing the user stories to draw out potential classes. Thus, when the user stories get refined throughout the development process as feedback from external stakeholders is received, it would be easier to detect how the classes would change. As a responsibility-driven approach focuses on identifying all the requirements from the start, it may not suit this project which involves an inexperienced team so the user stories would change over time.
+
+To create the filter method as specified in the user stories for filtering the data in the visualisations, the Filter Pattern was chosen as the design pattern (tutorialspoint, 2021). It involves utilising concrete classes to implement the operations and attributes defined by the interface class, and these classes have a realisation relationship. This way, the implementation of the filter method is handled by the classes that use it and filters can be saved as saved filters. Though Python does not have an 'interface' keyword like in Java, the design pattern can still be applied by utilising different methods of creating a class with similar functions to that of an 'interface' class (Real Python, 2021). 
+
+Despite trying to ensure low coupling, it was necessary to have the forum_comment, forum_post and user class to all be linked to each other. These classes are dependent on each other, for example, if a user's name is changed, the forum posts and comments can reflect those changes.
+
+The resulting class diagram is shown below:
+
+<img src = diagrams/design/class_diagram.png width = '400px'>
 
 #### Wireframes
 
 Lucidchart was used to create the wireframes for the web app. As the user of the web app would tend to use their laptops to access the app instead of other devices like their mobile phone, the sketch would assume the user is accessing the web app on their laptop.
 
 **User or developer logs in or signs up**
-![Wireframe 1. User logs in](wireframes/1_user_logs_in.png)
+<img src = wireframes/wireframe_1.png width = '800px'>
 
 **User saves a filter**
+<img src = wireframes/wireframe_2.png width = '800px'>
 
 **User uses the forum**
+<img src = wireframes/wireframe_3.png width = '800px'>
 
 **User reads a news articles**
+<img src = wireframes/wireframe_4.png width = '800px'>
 
 **User goes to the settings page**
-
-
-#### Class diagram
-
-A class diagram was created for a high level visualisation of the model of the web application. [why create a class diagram]
-
-A data-driven approach was chosen to identify the classes and their attributes and methods, and the relationships between the classes. This approach was chosen as it utilises analysing the user stories to draw out potential classes. Thus, when the user stories get refined throughout the development process as feedback from external stakeholders is received, it would be easier to detect how the classes would change. As a responsibility-driven approach focuses on identifying all the requirements from the start , it may not suit this project which is involves an inexperienced team so the user stories would change over time.
-
-To create the filtering function as specified in the user stories, the Filter Pattern was chosen as the design function (tutorialspoint, 2021). It involves utilising concrete classes to implement the operations and attributes defined by the interface class. As Python does not have an 'interface' keyword unlike Java, the design pattern can still be applied by utilising different methods of creating a class with similar functions to that of an 'interface' class (Real Python, 2021). 
-
-Criteria interface and concrete classes implementing this interface to filter list of Person objects.
-
-Despite trying to ensure low coupling and that inheritance causes 
-[why would we have an inheritance relationship]
-
-The resulting class diagram is shown below:
-
-<img src = diagrams/ERDs/ERD_saved_filter.png width = '400px'>
-
-<from sarah>
-Conceptually this makes sense. A class diagram is a model of your application. As a model of your design intent I personally think this makes sense. You are correct in that you can't create a class of type interface in Python, you have choices (you may have already read the article but if not see https://realpython.com/python-interface/). Given that I don't know which students' coursework will be moderated, I would suggest that rather than try to modify the diagram again that you write in the markdown and explain your reasons for applying this design pattern. You can also note that the diagram is modelling the interface concept (ie that you want there to be a filter method for which the actual implementation is handled by the classes that use it) even though you are aware that there is no specific interface keyword in Python.
-
-
+<img src = wireframes/wireframe_5.png width = '800px'>
 
 
 #### Routes
 
-(a controller is what happens when the user goes to that view and that controller can get called when something happens in that view)
+* Note: all routes except /login and /signup require the @login_required decorator from the flask-login plugin 
 
-* Note: all routes except /login and /signup require the @login_required from the Flask-Login plugin (https://hackersandslackers.com/flask-routes/)
-
-| Route | View | Controller Function |
+| Route | View (frame in the wireframes) | Controller Function |
 | :----- | :----- | :----- |
 | /login | 1.1 | login() Checks the entered account info against the details in the database, returns an error if details are incorrect, otherwise redirects users to the main page. |
 | /signup | 1.1.1 | signup() Checks the entered email against the whitelisted emails in the database, returns an error if the email is not present, otherwise stores the login details in the database and redirects users to the main page. |
-| /main | 1.2 | index() Renders the home page with the user's first saved visualisation. filter() Renders the visualisations according to the saved filter chosen by the user. enlarge() Shows the visualisation that the user clicks on in a larger pop-up.|
-| /visualisation | 2.1 | filter() Renders the visualisations according to the boroughs and years selected by the user. enlarge() Shows the visualisation that the user clicks on in a larger pop-up. |
+| /main | 1.2 and 1.2.1 | index() Renders the home page with the user's first saved visualisation. filter() Renders the visualisations according to the saved filter chosen by the user. sidebar() Shows the full names of the headers when the user hovers over the sidebar |
+enlarge() Shows the visualisation that the user clicks on in a larger pop-up.
+| /main/enlarge | 1.2.2 | enlarge() Shows the visualisation that the user clicks on in a larger pop-up. |
+| /whitelist | 1.3 | whitelist() Whitelists a user's email by adding their email to the database of whitelisted emails and refreshes the whitelist page showing the newly whitelisted email at the bottom. |
+| /visualisation | 2.1 | get_dash() Calls the Dash dashboard app to render the visualisations. |
+| /visualisation/enlarge | 2.1.1 | enlarge() Shows the visualisation that the user clicks on in a larger pop-up. |
 | /visualisation/create_filter | 2.1.2 | create_filter() Saves the current boroughs and years selected by the user as a saved filter under the name written by the user. |
 | /forum | 3.1 | create_new() Shows a pop-up where the user can write the title and body of the forum post they want to write. read() When a user clicks on a forum post, shows a pop-up with the full contents of the forum post |
-| /forum/forum_post_id/read (user's post)| 3.2 | edit() When a user clicks on the 'Edit post' button on a forum post created by them, shows a pop-up where they can edit the body of their post. comment() When a user clicks on the 'Comment' button,shows a pop-up where the users can comment on the post |
-| /forum/forum_post_id/read (other user's post)| 3.3 | comment() When a user clicks on the 'Comment' button, shows a pop-up where the users can comment on the post |
-| /forum/forum_post_id/comment | 3.4 | submit() When a user clicks on the 'Submit' button after writing their comment, adds the details of the comment to the database, redirects users to the post page and renders the new comment on the post page |
-| /forum/create_new | 3.5 | post() When a user clicks on the 'Post' button after writing their post, adds the details of the post to the database, redirects users to the forum page and renders the new post on the forum page|
-| /news | 4.1 | read() When the user clicks on a news article, shows a pop-up with the full contents of the article |
-| /news/article_id/read/ | 4.1.1 |  |
-| /settings |  | reset_password() |
-| /whitelist |  | whitelist() Whitelists a user's email by adding their email to the database of whitelisted emails and |
+| /forum/<forum_post_id> (user's post)| 3.2 | edit() When a user clicks on the 'Edit post' button on a forum post created by them, shows a pop-up where they can edit the body of their post. comment() When a user clicks on the 'Comment' button, shows a pop-up where the users can comment on the post |
+| /forum/<forum_post_id>/edit (user's post)| 3.2 | save() Saves the edits made to the post. delete() Deletes the post so it can no longer be accessed and removes it from the database. |
+| /forum/<forum_post_id> (other user's post)| 3.3 | comment() When a user clicks on the 'Comment' button, shows a pop-up where the users can comment on the post. |
+| /forum/<forum_post_id>/comment | 3.4 | submit() When a user clicks on the 'Submit' button after writing their comment, adds the details of the comment to the database, redirects users to the post page and renders the new comment on the post page. |
+| /forum/create_new | 3.5 | post() When a user clicks on the 'Post' button after writing their post, adds the details of the post to the database, redirects users to the forum page and renders the new post on the forum page. |
+| /news | 4.1 | get_news() Calls the third party news API to show news articles related to business news in London |
+| /news/<article_id> | 4.1.1 | read() When the user clicks on a news article, shows a pop-up with the full contents of the article. |
+| /settings | 5.1 | display_settings() Returns the user settings page with data for that user |
 
 
 ### Relational database design
 
 #### ERD
 
-Firstly, considerations were made to ensure that the primary key of each table is an integer, so the user_id, forum_post_id, forum_comment_id and borough_id attributes were added
+Firstly, considerations were made to ensure that the primary key of each table is an integer, so the user_id, forum_post_id, forum_comment_id and filter_id attributes were added.
 
-SQLite, the database to be used, doesn't allow data to be stored as a date-time data type, so the integer format for UNIX time is used. Boolean values are also not supported so they are stored as integers 0 (false) and 1 (true) (SQLite, 2021).
+SQLite, the database to be used, doesn't allow data to be stored as a date-time data type, so the text format for ISO8601 strings is used. Boolean values are also not supported so they are stored as integers 0 (false) and 1 (true) (SQLite, 2021).
 
-To model the database with the saved filters, instead of storing the list of boroughs and years in the saved filter as a list as modelled in the class diagram, first normalisation was performed. Storing these details as a list would mean that a table cell would have one or more values which violates the requirements for 1st Normal Form (1NF). To avoid this, two tables were created linking the filter_id of the filter to the years and borough_id's of the boroughs that are in the filter. The tables, named filter_borough and filter_year, would also solve the many-to-many relationship between saved filters, boroughs and years: one filter can have many boroughs and years and one borough/year can belong to multiple years. The resulting ERD is below:
+To model the database with the saved filters, instead of storing the list of boroughs and years in the saved filter as a list as modelled in the class diagram, first normalisation was performed. Storing these details as a list would mean that a table cell would have one or more values which violates the requirements for 1st Normal Form (1NF). To avoid this, two tables were created linking the filter_id of the filter to the years and borough_id's of the boroughs that are in the filter. The tables, named filter_borough and filter_year, would also solve the many-to-many relationship between saved filters, boroughs and years: one filter can have many boroughs and years and one borough/year can belong to multiple filters. The resulting ERD is below:
 
-<img src = diagrams/ERDs/ERD_saved_filter.png width = '400px'>
+<img src = diagrams/ERDs/ERD_saved_filter.png width = '600px'>
 
 In the process of second normalisation to 2nd Normal Form (2NF), the table borough_name was created so that the attribute borough_name is only dependent on borough_id and not the combination of filter_id and borough_id. It also avoids duplication of data as it prevents having to store the borough name every time a borough is linked to a filter. The resulting tables have no transitive functional dependencies, so the requirements for 3rd Normal Form (3NF) are satisfied. 
 
-To model the databases for forum posts and forum comments, referential integrity is ensured so that each foreign key references an existing primary key in the parent table. These tables also satisfy the requirements for 1NF, 2NF and 3NF as shown below:
+To model the databases for forum posts and forum comments, referential integrity, where each foreign key references an existing primary key in the parent table (Database.Guide, 2016), is ensured. These tables also satisfy the requirements for 1NF, 2NF and 3NF as shown below:
 
-<img src = diagrams/ERDs/ERD_forum.png width = '400px'>
+<img src = diagrams/ERDs/ERD_forum.png width = '600px'>
 
-A table to store the whitelisted emails added by developers was created without any relationships with other tables. This is because the table with whitelisted emails only serves one purpose to check whether new users are authenticated by checking their emails against the list of whitelisted emails. Only once the users have signed up successfully are their details added to the user database table. As the table of whitelisted emails is still necessary to model the whole process of a user's journey while using the web app despite it having no relationships to other tables, it is still appropriate to have it [https://dba.stackexchange.com/questions/1088/is-it-ok-to-have-an-entity-in-an-er-diagram-without-a-relationship].
+A table to store the whitelisted emails added by developers was created without any relationships with other tables. This is because the table with whitelisted emails only serves one purpose to check whether new users are authenticated by checking their emails against the list of whitelisted emails. Only once the users have signed up successfully are their details added to the user database table. As the table of whitelisted emails is still necessary to model the whole process of a user's journey while using the web app despite it having no relationships to other tables, it is still appropriate to have it.
 
 The resulting ERD is shown below:
 
@@ -162,16 +160,16 @@ The resulting ERD is shown below:
 | Table | Column name | Key |  Data type | Constraint | Description |
 | :----- | :----- | :----- | :----- | :----- | :----- |
 | user | user_id | PK | Integer | Not null, auto increment | Unique identifer for users |
-| user | username |  | Text | Not null | |
+| user | username |  | Text | Not null | The unique username of the user which is used for logging in and displayed on the profile |
 | user | name |  | Text | Can be null (like when the user has just signed up and hasn't input their name) | User's name, can be first name, last name or full name |
-| user | email  |  | Text | Not null, check with regex that the email is in a valid @ and .com format | User's email that has signed up | 
+| user | email  |  | Text | Not null, check with regex that the email is in a valid @ and .com format | User's email that was used to sign up | 
 | user | password  |  | Text | Not null | Hashed password |
-| user | is_developer  |  | Integer | Not null, 0 for False or 1 for True | Whether a user has developer permissions  |
+| user | is_developer  |  | Integer | Not null, 0 for False or 1 for True | Whether a user has developer permissions |
 | forum_post | forum_post_id | PK | Integer | Not null, auto increment | Unique identifer for forum posts |
 | forum_post | user_id | FK | Integer | Not null | The user id of the writer of the forum post |
 | forum_post | title |  | Text | Not null | Title of the forum post |
 | forum_post | body |  | Text | Not null | Body text of the forum post |
-| forum_post | date_published |  | Text | Not null, stored as text as ISO8601 strings | Body text of the forum post |
+| forum_post | date_published |  | Text | Not null, stored as text as ISO8601 strings | Date the post was published |
 | forum_comment | forum_comment_id | PK | Integer | Not null, auto increment | Unique identifer for forum comments |
 | forum_comment | forum_post_id | FK | Integer | Not null | The forum post id of the post that the comment belongs too |
 | forum_comment | user_id | FK | Integer | Not null | The user id of the writer of the forum comment |
@@ -192,20 +190,17 @@ The resulting ERD is shown below:
 
 ## Testing
 
-Though it is not necessary to cite official documentation and tutorials of python libraries, I thought it would be useful to link the relevant pages as they were heavily consulted. 
+Though it is not necessary to cite official documentation and tutorials of python libraries, I thought it would be useful to link the relevant pages of material not covered in the course material as they were heavily consulted. 
+
+The software development team of this project team will utilise a real-time bug fixing approach where bugs are fixed as they are found. This way, the consequential damage caused by the bug can be limited and provides team members with a learning opportunity to write better code (Lacey, 2016). 
 
 
 ### Choice of unit testing library
 
-Pytest was chosen because it is simpler to use and unlike unittest, doesn't [require creating classes and defining the testing functions within that class]
-scalable and simple tests
-[https://www.pythonpool.com/python-unittest-vs-pytest/]
+pytest was chosen because it is simpler to use and requires less code compared to unittest (Python Pool, 2021). While unittest requires developers to create a class to contain the testing functions, pytest only requires defining the test function. 
 
 Automated web accessibility testing using [aXe and selenium](https://pypi.org/project/axe-selenium-python/) is to be performed once the web app page is running. It cannot currently be performed because there is no url. Once the web page has a url, [geckodriver for Firefox](https://www.guru99.com/gecko-marionette-driver-selenium.html) will also be installed so that the test can run. 
 
-
-Process of checking for bugs in the project development stage
-https://www.mitchlacey.com/blog/managing-bugs-in-scrum-and-agile-projects/
 
 ### Tests
 
@@ -231,11 +226,11 @@ When running `python -m pytest --cov=user tests/test_user.py`:
 
 #### Code quality
 
-To ensure code quality, it is important to follow standard conventions for Python, such as those from PEP8 and PEP257. This was checked with the flake8 linter through Github Actions, which found that the code did not adhere to style guides.
+To ensure code quality, it is important to follow standard conventions for Python, such as those from PEP8 and PEP257. This was checked with the flake8 linter through Github Actions, which found the lines of code that did not adhere to style guides.
 
 <img src = test_results/flake8.png width = '800px'>
 
-The Black Python code reformatter[https://pypi.org/project/black/] was used for to ensure that PEP8 conventions were followed for the user.py, data_preparation.py, conftest.py, test_user and test_accessibility files.
+The Black Python code reformatter[https://pypi.org/project/black/] was used for to ensure that PEP8 conventions were followed in the user.py, data_preparation.py, conftest.py, test_user and test_accessibility files.
 
 <img src = test_results/black_1.png width = '800px'>
 <img src = test_results/black_2.png width = '800px'>
@@ -252,9 +247,15 @@ The Python Application workflow on Github Actions was added to the project. The 
 
 Agile Business, 2021. 10 Moscow Prioritisation - Agile Business. Agile Business Consortium. Available at: https://www.agilebusiness.org/page/ProjectFramework_10_MoSCoWPrioritisation [Accessed December 19, 2021]. 
 
+Database.Guide, 2016. What is Referential Integrity? Database.Guide. Available at: https://database.guide/what-is-referential-integrity/ [Accessed December 15, 2021]. 
+
 International Institute of Business Analysis. (2015). A Guide to the Business Analysis Body of Knowledge (Babok Guide). International Institute of Business Analysis. 
 
 Kitzinger, J., 1995. ‘Qualitative Research: Introducing focus groups’. BMJ, 311(7000), pp.299–302. Available at: <https://www.bmj.com/content/311/7000/299.short?casa_token=uJ4gtahRwrAAAAAA:2k59gth8O5qcSTJ9OTiid4f8Gu-u5oXe8svsPsgYXGLltwIUv0kjsTXThj-n-lAxUbHrtoeofWQ4> [Accessed Nov 24, 2021]. 
+
+Lacey, M., 2016. Managing Bugs in Scrum and Agile Projects. Mitch Lacey &amp; Associates, Inc. Available at: https://www.mitchlacey.com/blog/managing-bugs-in-scrum-and-agile-projects/ [Accessed December 22, 2021]. 
+
+Python Pool, 2021. Python unittest VS pytest: Choose the best. Python Pool. Available at: https://www.pythonpool.com/python-unittest-vs-pytest/ [Accessed December 19, 2021]. 
 
 Real Python, 2021. Implementing an interface in Python. Real Python. Available at: https://realpython.com/python-interface/ [Accessed December 19, 2021]. 
 
