@@ -215,11 +215,11 @@ The file with the code for the accessibility testing is in the tests folder for 
 
 ### Test results
 
-When running `python -m pytest -v tests/test_user.py`:
+When running `python -m pytest -v tests/test_user.py` to get the test report:
 
 <img src = test_results/result_test_user.png width = '800px'>
 
-When running `python -m pytest --cov=user tests/test_user.py`:
+When running `python -m pytest --cov=user tests/test_user.py` to get the coverage report:
 
 <img src = test_results/result_test_user_cov.png width = '800px'>
 
